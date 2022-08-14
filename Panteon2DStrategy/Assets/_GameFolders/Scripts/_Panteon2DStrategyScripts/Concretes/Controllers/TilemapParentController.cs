@@ -13,6 +13,7 @@ namespace Panteon2DStrategy.Controllers
         [SerializeField] TilemapChildController[] _children;
 
         public ITilemapChildController[] TileMapChildren => _children;
+        public Transform Transform => _transform;
 
         void Awake()
         {
@@ -26,11 +27,16 @@ namespace Panteon2DStrategy.Controllers
 
         [BoxGroup("Buttons")]
         [Button(ButtonSizes.Medium)]
-        private void CleanAndGetChildren()
+        public void CleanAndGetChildren()
         {
             CleanChildren();
             
             CreateAndSetChildren();
+        }
+
+        public void Bind(TilemapParentDataContainer tilemapParentDataContainer)
+        {
+            _tilemapParentDataContainer = tilemapParentDataContainer;
         }
 
         [BoxGroup("Buttons")]
@@ -58,7 +64,7 @@ namespace Panteon2DStrategy.Controllers
                 var tile = Instantiate(tilemapChildPrefab, _transform);
                 tile.Transform.localPosition = position;
                 tile.BindScale(_tilemapParentDataContainer.ChildScale);
-                position += Vector3.right * _tilemapParentDataContainer.Difference;
+                position += _tilemapParentDataContainer.Difference * Vector3.right;
             }
             
             _children = GetComponentsInChildren<TilemapChildController>();
@@ -68,5 +74,7 @@ namespace Panteon2DStrategy.Controllers
     public interface ITilemapParentController
     {
         ITilemapChildController[] TileMapChildren { get; }
+        void CleanAndGetChildren();
+        void Bind(TilemapParentDataContainer tilemapParentDataContainer);
     }
 }
