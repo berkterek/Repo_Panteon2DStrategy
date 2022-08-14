@@ -46,6 +46,8 @@ namespace Panteon2DStrategy.Controllers
                     DestroyImmediate(_transform.GetChild(0).gameObject);
                 }
             }
+
+            _children = null;
         }
 
         private void CreateAndSetChildren()
