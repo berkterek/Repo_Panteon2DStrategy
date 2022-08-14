@@ -1,4 +1,5 @@
 using UnityEngine;
+using Panteon2DStrategyScripts.ExtensionMethods;
 
 namespace Panteon2DStrategy.Controllers
 {
@@ -10,12 +11,12 @@ namespace Panteon2DStrategy.Controllers
 
         void Awake()
         {
-
+            this.GetReference(ref _transform);
         }
 
         void OnValidate()
         {
-            
+            this.GetReference(ref _transform);   
         }
     }
 
