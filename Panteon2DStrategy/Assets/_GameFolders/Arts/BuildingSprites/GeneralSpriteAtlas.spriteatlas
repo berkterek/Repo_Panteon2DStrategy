@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GeneralSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 1e10192055f2ea245bb5920e436f16d7, type: 3}
+    - {fileID: 102900000, guid: 099fb69d726209b4bb0576cd25d8694e, type: 3}
+    - {fileID: 102900000, guid: 380533cf6821fd046b1135358ece77b4, type: 3}
+    - {fileID: 102900000, guid: c30b74e83aa1b124faa02f37f2990371, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a3ad334092f86d14b94f2db658dd13f6, type: 3}
+  - {fileID: 21300000, guid: 022bab50897278748adcf85b3afc97fd, type: 3}
+  - {fileID: 21300000, guid: e25d0832ed55bd6488c68c366c90fdf0, type: 3}
+  - {fileID: 21300000, guid: 5682f4f2fd5f568419f9851f9f0a8029, type: 3}
+  - {fileID: 21300000, guid: 637f7044d1dcb3740a2d8ef4fd4209ce, type: 3}
+  - {fileID: 21300000, guid: 335d5297a1356f64fabc68c7b658b558, type: 3}
+  - {fileID: 21300000, guid: dc74160844d6e7349a97479d16838948, type: 3}
+  - {fileID: 21300000, guid: 012d8a78617fb4a42b80e1636f455866, type: 3}
+  - {fileID: 21300000, guid: 11a00dd98d3ed244aa0b82919ed92882, type: 3}
+  - {fileID: 21300000, guid: cf3d95f941ff4d44cbaeb8ba64fd3838, type: 3}
+  - {fileID: 21300000, guid: 3dc6999c5d56a9d4c8c4493f9871df11, type: 3}
+  - {fileID: 21300000, guid: 58be744e3b1a81947b61a8ab178c7f93, type: 3}
+  - {fileID: 21300000, guid: 181b48dfc0122a64892897b44655a5e9, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - AttackIncrease_Building
+  - Forest_18 1
+  - Forest_20 1
+  - Attacker_Building2
+  - Map1
+  - Restaurant_1 1
+  - Attacker_Building1
+  - Restaurant_2 1
+  - Forest_21 1
+  - Heal_Building
+  - DefenceIncrease_Building
+  - Map2
+  - Forest_19 1
+  m_RenderDataMap: {}
+  m_Tag: GeneralSpriteAtlas
+  m_IsVariant: 0
