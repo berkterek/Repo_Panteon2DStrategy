@@ -265,11 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72713452067d89544a0dfe9694a1d831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileMapChildPrefab: {fileID: 680382283815771143, guid: ebad80cd1ecdc2d4fb7bf25ecdbefa80, type: 3}
-  _tileStartXPosition: -30
-  _difference: 1.25
-  _creationCount: 50
-  _childScale: {x: 0.25, y: 0.25}
+  tilemapChildPrefab: {fileID: 680382283815771143, guid: ebad80cd1ecdc2d4fb7bf25ecdbefa80, type: 3}
+  _tilemapParentDataContainer: {fileID: 11400000, guid: 4becceef0795b2f4ca852ab76a6fcc86, type: 2}
   _transform: {fileID: 2071969533}
   _children: []
 --- !u!4 &2071969533

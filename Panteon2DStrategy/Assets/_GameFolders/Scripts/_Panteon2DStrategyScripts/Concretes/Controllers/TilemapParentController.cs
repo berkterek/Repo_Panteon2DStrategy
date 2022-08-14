@@ -1,20 +1,18 @@
+using Panteon2DStrategy.ScriptableObjects;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Panteon2DStrategyScripts.ExtensionMethods;
 
 namespace Panteon2DStrategy.Controllers
 {
-    public class TileMapParentController : MonoBehaviour,ITileMapParentController
+    public class TilemapParentController : MonoBehaviour,ITilemapParentController
     {
-        [SerializeField] TileMapChildController _tileMapChildPrefab;
-        [SerializeField] float _tileStartXPosition = -30f;
-        [SerializeField] float _difference = 0.25f;
-        [SerializeField] int _creationCount = 50;
-        [SerializeField] Vector2 _childScale;
+        [SerializeField] TilemapChildController tilemapChildPrefab;
+        [SerializeField] TilemapParentDataContainer _tilemapParentDataContainer;
         [SerializeField] Transform _transform;
-        [SerializeField] TileMapChildController[] _children;
+        [SerializeField] TilemapChildController[] _children;
 
-        public ITileMapChildController[] TileMapChildren => _children;
+        public ITilemapChildController[] TileMapChildren => _children;
 
         void Awake()
         {
@@ -53,22 +51,22 @@ namespace Panteon2DStrategy.Controllers
 
         private void CreateAndSetChildren()
         {
-            Vector3 position = new Vector3(_tileStartXPosition, 0f, 0f);
+            Vector3 position = new Vector3(_tilemapParentDataContainer.TileStartXPosition, 0f, 0f);
 
-            for (int i = 0; i < _creationCount; i++)
+            for (int i = 0; i < _tilemapParentDataContainer.CreationCount; i++)
             {
-                var tile = Instantiate(_tileMapChildPrefab, _transform);
+                var tile = Instantiate(tilemapChildPrefab, _transform);
                 tile.Transform.localPosition = position;
-                tile.BindScale(_childScale);
-                position += Vector3.right * _difference;
+                tile.BindScale(_tilemapParentDataContainer.ChildScale);
+                position += Vector3.right * _tilemapParentDataContainer.Difference;
             }
             
-            _children = GetComponentsInChildren<TileMapChildController>();
+            _children = GetComponentsInChildren<TilemapChildController>();
         }
     }
 
-    public interface ITileMapParentController
+    public interface ITilemapParentController
     {
-        ITileMapChildController[] TileMapChildren { get; }
+        ITilemapChildController[] TileMapChildren { get; }
     }
 }

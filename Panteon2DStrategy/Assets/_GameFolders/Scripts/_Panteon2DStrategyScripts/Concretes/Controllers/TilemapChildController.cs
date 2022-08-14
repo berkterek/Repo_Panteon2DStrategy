@@ -3,7 +3,7 @@ using Panteon2DStrategyScripts.ExtensionMethods;
 
 namespace Panteon2DStrategy.Controllers
 {
-    public class TileMapChildController : MonoBehaviour,ITileMapChildController
+    public class TilemapChildController : MonoBehaviour,ITilemapChildController
     {
         [SerializeField] Transform _transform;
         [SerializeField] Transform _body;
@@ -26,7 +26,7 @@ namespace Panteon2DStrategy.Controllers
         }
     }
 
-    public interface ITileMapChildController
+    public interface ITilemapChildController
     {
         Transform Transform { get; }
         void BindScale(Vector2 value);
