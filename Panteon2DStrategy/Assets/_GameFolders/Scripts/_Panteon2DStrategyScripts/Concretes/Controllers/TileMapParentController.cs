@@ -10,6 +10,7 @@ namespace Panteon2DStrategy.Controllers
         [SerializeField] float _tileStartXPosition = -30f;
         [SerializeField] float _difference = 0.25f;
         [SerializeField] int _creationCount = 50;
+        [SerializeField] Vector2 _childScale;
         [SerializeField] Transform _transform;
         [SerializeField] TileMapChildController[] _children;
 
@@ -58,6 +59,7 @@ namespace Panteon2DStrategy.Controllers
             {
                 var tile = Instantiate(_tileMapChildPrefab, _transform);
                 tile.Transform.localPosition = position;
+                tile.BindScale(_childScale);
                 position += Vector3.right * _difference;
             }
             

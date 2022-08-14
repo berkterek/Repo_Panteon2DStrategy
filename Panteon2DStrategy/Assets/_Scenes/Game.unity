@@ -269,6 +269,7 @@ MonoBehaviour:
   _tileStartXPosition: -30
   _difference: 1.25
   _creationCount: 50
+  _childScale: {x: 0.25, y: 0.25}
   _transform: {fileID: 2071969533}
   _children: []
 --- !u!4 &2071969533

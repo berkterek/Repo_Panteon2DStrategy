@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7048916892708877770}
   - component: {fileID: 680382283815771143}
   m_Layer: 0
-  m_Name: MapTile
+  m_Name: TileMapChild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da623ef519858242a99ea6fd454916a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transform: {fileID: 7048916892708877770}
+  _body: {fileID: 7048916893444924479}
 --- !u!1 &7048916893444924478
 GameObject:
   m_ObjectHideFlags: 0
