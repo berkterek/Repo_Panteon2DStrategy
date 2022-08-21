@@ -1,14 +1,13 @@
-using System;
 using System.Collections.Generic;
 using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.ScriptableObjects;
-using Panteon2DStrategyScripts.ExtensionMethods;
+using Panteon2DStrategyScripts.Helpers;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Panteon2DStrategy.Managers
 {
-    public class MapCreatorManager : MonoBehaviour
+    public class MapCreatorManagerWithNormalObject : MonoBehaviour
     {
         [SerializeField] float _startYPosition = -30f;
         [SerializeField] float _difference = 0.35f;
@@ -19,7 +18,7 @@ namespace Panteon2DStrategy.Managers
 
         Dictionary<ITilemapParentController, List<ITilemapChildController>> _tilemaps;
 
-        public static MapCreatorManager Instance { get; private set; }
+        public static MapCreatorManagerWithNormalObject Instance { get; private set; }
 
         void Awake()
         {

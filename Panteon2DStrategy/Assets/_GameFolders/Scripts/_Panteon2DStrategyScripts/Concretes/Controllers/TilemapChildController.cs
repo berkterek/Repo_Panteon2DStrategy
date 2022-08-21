@@ -1,5 +1,5 @@
 using UnityEngine;
-using Panteon2DStrategyScripts.ExtensionMethods;
+using Panteon2DStrategyScripts.Helpers;
 
 namespace Panteon2DStrategy.Controllers
 {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Panteon2DStrategyScripts.ExtensionMethods
+namespace Panteon2DStrategyScripts.Helpers
 {
     public static class MonoExtensionMethods
     {

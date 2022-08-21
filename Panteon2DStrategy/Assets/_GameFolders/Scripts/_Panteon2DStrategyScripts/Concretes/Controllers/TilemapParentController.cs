@@ -1,7 +1,7 @@
 using Panteon2DStrategy.ScriptableObjects;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using Panteon2DStrategyScripts.ExtensionMethods;
+using Panteon2DStrategyScripts.Helpers;
 
 namespace Panteon2DStrategy.Controllers
 {
