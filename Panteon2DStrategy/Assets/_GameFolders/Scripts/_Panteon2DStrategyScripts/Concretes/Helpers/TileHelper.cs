@@ -31,7 +31,7 @@ namespace Panteon2DStrategy.Helpers
             tilemap.SetTilesBlock(area, tileArray);
         }
 
-        private static void FillTiles(TileBase[] tileBaseArray, TileType tileType,
+        public static void FillTiles(TileBase[] tileBaseArray, TileType tileType,
             Dictionary<TileType, TileBase> tileBases)
         {
             for (int i = 0; i < tileBaseArray.Length; i++)
