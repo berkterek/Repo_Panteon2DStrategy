@@ -2,11 +2,11 @@ using UnityEngine;
 
 namespace Panteon2DStrategy.Helpers
 {
-    public class CacheHelper
+    public static class CacheHelper
     {
-        public Vector2 Zero { get; }
+        public static Vector2 Zero { get; }
         
-        public CacheHelper()
+        static CacheHelper()
         {
             Zero = Vector2.zero;
         }
