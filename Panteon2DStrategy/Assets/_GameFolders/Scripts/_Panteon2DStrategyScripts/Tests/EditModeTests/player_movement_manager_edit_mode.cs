@@ -3,7 +3,10 @@ using Panteon2DStrategy.Managers;
 using NSubstitute;
 using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Inputs;
+using Panteon2DStrategy.Abstracts.Movements;
+using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Helpers;
+using Panteon2DStrategy.ViewModels;
 using UnityEngine;
 
 namespace Movements
@@ -17,12 +20,12 @@ namespace Movements
         {
             _viewModel = new PlayerMovementViewModel
             {
-                MoverDals = new IMoverDal[] { Substitute.For<IMoverDal>(), Substitute.For<IMoverDal>() },
+                MoverDalArray = new IMoverDal[] { Substitute.For<IMoverDal>(), Substitute.For<IMoverDal>() },
                 PlayerController = Substitute.For<IPlayerController>()
             };
 
-            _viewModel.MoverDals[0].Type.Returns(MoveType.Transform);
-            _viewModel.MoverDals[1].Type.Returns(MoveType.MousePosition);
+            _viewModel.MoverDalArray[0].Type.Returns(MoveType.Transform);
+            _viewModel.MoverDalArray[1].Type.Returns(MoveType.MousePosition);
             GameObject gameObject = new GameObject();
             var camera = gameObject.AddComponent<Camera>();
             _viewModel.PlayerController.MainCamera.Returns(camera);
@@ -40,7 +43,7 @@ namespace Movements
             movementManager.Tick();
 
             //Assert
-            _viewModel.MoverDals[0].Received().Tick(movementManager.Speed * CacheHelper.Left);
+            _viewModel.MoverDalArray[0].Received().Tick(movementManager.Speed * CacheHelper.Left);
         }
 
         [Test]
@@ -54,7 +57,7 @@ namespace Movements
             movementManager.Tick();
 
             //Assert
-            _viewModel.MoverDals[1].Received().Tick(CacheHelper.Zero);
+            _viewModel.MoverDalArray[1].Received().Tick(CacheHelper.Zero);
         }
         
         [Test]
@@ -69,7 +72,7 @@ namespace Movements
             movementManager.FixedTick();
 
             //Assert
-            _viewModel.MoverDals[0].Received().FixedTick();
+            _viewModel.MoverDalArray[0].Received().FixedTick();
         }
         
         [Test]
@@ -84,7 +87,7 @@ namespace Movements
             movementManager.FixedTick();
 
             //Assert
-            _viewModel.MoverDals[1].Received().FixedTick();
+            _viewModel.MoverDalArray[1].Received().FixedTick();
         }
     }
 }

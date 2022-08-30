@@ -1,7 +1,10 @@
 ﻿using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Inputs;
+using Panteon2DStrategy.Abstracts.Movements;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Managers;
+using Panteon2DStrategy.Movements;
+using Panteon2DStrategy.ViewModels;
 using Panteon2DStrategyScripts.Helpers;
 using UnityEngine;
 
@@ -25,7 +28,7 @@ namespace Panteon2DStrategy.Controllers
             this.GetReference<Transform>(ref _transform);
             var moveViewModel = new PlayerMovementViewModel();
             moveViewModel.PlayerController = this;
-            moveViewModel.MoverDals = new IMoverDal[]
+            moveViewModel.MoverDalArray = new IMoverDal[]
                 { new MoveWithMousePosition(_moverObject), new MoveWithTransformDal(_moverObject) };
             MoveManager = new PlayerMovementManager(moveViewModel);
         }
