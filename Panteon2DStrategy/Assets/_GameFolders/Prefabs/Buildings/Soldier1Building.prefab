@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a378df161ca42128fc6ecb7b48caac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transform: {fileID: 732159931740311902}
   _area:
     m_Position: {x: 0, y: 0, z: 0}
-    m_Size: {x: 2, y: 2, z: 1}
+    m_Size: {x: 4, y: 4, z: 1}
   _isPlaced: 0
 --- !u!1 &7051699850873988778
 GameObject:
