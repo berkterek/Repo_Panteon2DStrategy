@@ -1,11 +1,13 @@
 using Panteon2DStrategy.Abstracts.Inputs;
+using Panteon2DStrategy.Enums;
+using Panteon2DStrategy.Factories;
 using UnityEngine;
 
 namespace Panteon2DStrategy.Managers
 {
-    public class InputManager : IInputService
+    public class PlayerInputManager : IInputService
     {
-        static InputManager _instance;
+        static PlayerInputManager _instance;
         static readonly object _lockedObject = new object();
         readonly IInputDal _inputDal;
 
@@ -15,18 +17,18 @@ namespace Panteon2DStrategy.Managers
         public bool IsRightButtonDown => _inputDal.IsRightButtonDown;
         public bool CenterButtonDown => _inputDal.IsCenterButtonDown;
 
-        private InputManager(IInputDal inputDal)
+        private PlayerInputManager(IInputDal inputDal)
         {
             _inputDal = inputDal;
         }
 
-        public static InputManager CreateSingleton(IInputDal inputDal)
+        public static PlayerInputManager CreateSingleton(InputType inputType)
         {
             lock (_lockedObject)
             {
                 if (_instance == null)
                 {
-                    _instance = new InputManager(inputDal);
+                    _instance = new PlayerInputManager(InputFactory.Create(inputType));
                 }
             }
 

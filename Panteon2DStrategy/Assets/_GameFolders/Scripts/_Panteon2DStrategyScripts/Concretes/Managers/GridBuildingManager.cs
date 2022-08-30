@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Panteon2DStrategy.Abstracts.Inputs;
 using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
-using Panteon2DStrategy.Factories;
 using Panteon2DStrategy.Helpers;
 using Panteon2DStrategyScripts.Helpers;
 using UnityEngine;
@@ -22,16 +21,16 @@ namespace Panteon2DStrategy.Managers
         [SerializeField] Camera _mainCamera;
 
         IInputService _inputManager;
+        Dictionary<TileType, TileBase> _tileBases;
         
-        public Dictionary<TileType, TileBase> TileBases { get; private set; }
         public GridLayout GridLayout => _gridLayout;
         
         void Awake()
         {
             this.GetReference<GridLayout>(ref _gridLayout);
-            TileBases = new Dictionary<TileType, TileBase>();
+            _tileBases = new Dictionary<TileType, TileBase>();
             _mainCamera = Camera.main;
-            _inputManager = InputManager.CreateSingleton(InputFactory.Create(InputType.OldInput));
+            _inputManager = PlayerInputManager.CreateSingleton(InputType.OldInput);
         }
 
         void OnValidate()
@@ -43,10 +42,10 @@ namespace Panteon2DStrategy.Managers
         {
             //TODO refactor this code
             string path = "Tiles/";
-            TileBases.Add(TileType.Empty,null);
-            TileBases.Add(TileType.White, Resources.Load<TileBase>(path +"White"));
-            TileBases.Add(TileType.Red, Resources.Load<TileBase>(path+"Red"));
-            TileBases.Add(TileType.Blue, Resources.Load<TileBase>(path+"Blue"));
+            _tileBases.Add(TileType.Empty,null);
+            _tileBases.Add(TileType.White, Resources.Load<TileBase>(path +"White"));
+            _tileBases.Add(TileType.Red, Resources.Load<TileBase>(path+"Red"));
+            _tileBases.Add(TileType.Blue, Resources.Load<TileBase>(path+"Blue"));
         }
 
         void Update()
@@ -88,7 +87,7 @@ namespace Panteon2DStrategy.Managers
         private void ClearArea()
         {
             TileBase[] toClear = new TileBase[_preArea.size.x * _preArea.size.y * _preArea.size.z];
-            TileHelper.FillTiles(toClear, TileType.Empty, TileBases);
+            TileHelper.FillTiles(toClear, TileType.Empty, _tileBases);
             _tempTilemap.SetTilesBlock(_preArea,toClear);
         }
 
@@ -106,13 +105,13 @@ namespace Panteon2DStrategy.Managers
 
             for (int i = 0; i < baseArray.Length; i++)
             {
-                if (baseArray[i] == TileBases[TileType.White])
+                if (baseArray[i] == _tileBases[TileType.White])
                 {
-                    tileArray[i] = TileBases[TileType.Blue];
+                    tileArray[i] = _tileBases[TileType.Blue];
                 }
                 else
                 {
-                    TileHelper.FillTiles(tileArray,TileType.Red,TileBases);
+                    TileHelper.FillTiles(tileArray,TileType.Red,_tileBases);
                     break;
                 }
             }
@@ -133,7 +132,7 @@ namespace Panteon2DStrategy.Managers
             TileBase[] baseArray = TileHelper.GetTileBlock(area, _mainTilemap);
             foreach (var tileBase in baseArray)
             {
-                if (tileBase != TileBases[TileType.White])
+                if (tileBase != _tileBases[TileType.White])
                 {
                     Debug.Log("<color=red>Can not place here</color>");
                     return false;
@@ -145,8 +144,8 @@ namespace Panteon2DStrategy.Managers
         
         public void TakeArea(BoundsInt area)
         {
-            TileHelper.SetTilesBlocks(area, TileType.Empty, _tempTilemap, TileBases);
-            TileHelper.SetTilesBlocks(area, TileType.Blue, _mainTilemap, TileBases);
+            TileHelper.SetTilesBlocks(area, TileType.Empty, _tempTilemap, _tileBases);
+            TileHelper.SetTilesBlocks(area, TileType.Blue, _mainTilemap, _tileBases);
             _tempBuildingController = null;
         }
     }    
