@@ -1,7 +1,8 @@
 using System.Collections.Generic;
-using Panteon2DStrategy.Abstracts.Helpers;
+using Panteon2DStrategy.Abstracts.Inputs;
 using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
+using Panteon2DStrategy.Factories;
 using Panteon2DStrategy.Helpers;
 using Panteon2DStrategyScripts.Helpers;
 using UnityEngine;
@@ -10,7 +11,7 @@ using UnityEngine.Tilemaps;
 
 namespace Panteon2DStrategy.Managers
 {
-    public class GridBuildingManager : SingletonDestroyObject<GridBuildingManager>
+    public class GridBuildingManager : MonoBehaviour
     {
         [SerializeField] GridLayout _gridLayout;
         [SerializeField] Tilemap _mainTilemap;
@@ -19,16 +20,18 @@ namespace Panteon2DStrategy.Managers
         [SerializeField] Vector3 _prePosition;
         [SerializeField] BoundsInt _preArea;
         [SerializeField] Camera _mainCamera;
+
+        IInputService _inputManager;
         
         public Dictionary<TileType, TileBase> TileBases { get; private set; }
         public GridLayout GridLayout => _gridLayout;
         
         void Awake()
         {
-            SetSingleton(this);
             this.GetReference<GridLayout>(ref _gridLayout);
             TileBases = new Dictionary<TileType, TileBase>();
             _mainCamera = Camera.main;
+            _inputManager = InputManager.CreateSingleton(InputFactory.Create(InputType.OldInput));
         }
 
         void OnValidate()
@@ -50,13 +53,13 @@ namespace Panteon2DStrategy.Managers
         {
             if (_tempBuildingController == null) return;
 
-            if (Input.GetMouseButton(0))
+            if (_inputManager.IsLeftButton)
             {
                 if (EventSystem.current.IsPointerOverGameObject(0)) return;
 
                 if (!_tempBuildingController.IsPlaced)
                 {
-                    Vector2 touchPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                    Vector2 touchPosition = _mainCamera.ScreenToWorldPoint(_inputManager.MousePosition);
                     Vector3Int cellPosition = _gridLayout.LocalToCell(touchPosition);
 
                     if (_prePosition != cellPosition)
@@ -68,14 +71,14 @@ namespace Panteon2DStrategy.Managers
                     }
                 }    
             }
-            else if (Input.GetKeyDown(KeyCode.Space))
+            else if (_inputManager.IsRightButtonDown)
             {
-                if (_tempBuildingController.CanBePlaced())
+                if (_tempBuildingController.CanBePlaced(this))
                 {
-                    _tempBuildingController.Place();
+                    _tempBuildingController.Place(this);
                 }
             }
-            else if (Input.GetMouseButtonDown(1))
+            else if (_inputManager.CenterButtonDown)
             {
                 ClearArea();
                 Destroy(_tempBuildingController.gameObject);
@@ -120,7 +123,6 @@ namespace Panteon2DStrategy.Managers
 
         public void InitializeWithBuilding(GameObject building)
         {
-            Quaternion quaternion = Quaternion.identity;
             _tempBuildingController = Instantiate(building, CacheHelper.Zero, CacheHelper.Identity)
                 .GetComponent<TileBuildingController>();
             FollowBuilding();
@@ -145,6 +147,7 @@ namespace Panteon2DStrategy.Managers
         {
             TileHelper.SetTilesBlocks(area, TileType.Empty, _tempTilemap, TileBases);
             TileHelper.SetTilesBlocks(area, TileType.Blue, _mainTilemap, TileBases);
+            _tempBuildingController = null;
         }
     }    
 }

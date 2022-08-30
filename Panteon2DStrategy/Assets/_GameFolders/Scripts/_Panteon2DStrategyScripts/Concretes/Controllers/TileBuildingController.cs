@@ -29,17 +29,15 @@ namespace Panteon2DStrategy.Controllers
             this.GetReference(ref _transform);
         }
 
-        public bool CanBePlaced()
+        public bool CanBePlaced(GridBuildingManager gridManager)
         {
-            var gridManager = GridBuildingManager.Instance;
             var area = GetArea(gridManager);
 
             return gridManager.CanTakeArea(area);
         }
 
-        public void Place()
+        public void Place(GridBuildingManager gridManager)
         {
-            var gridManager = GridBuildingManager.Instance;
             var area = GetArea(gridManager);
             
             gridManager.TakeArea(area);
