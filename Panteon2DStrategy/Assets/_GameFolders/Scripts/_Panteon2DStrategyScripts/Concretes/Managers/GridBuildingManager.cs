@@ -19,6 +19,7 @@ namespace Panteon2DStrategy.Managers
         [SerializeField] Vector3 _prePosition;
         [SerializeField] BoundsInt _preArea;
         [SerializeField] Camera _mainCamera;
+        [SerializeField] TileBuildingController[] _tileBuildingSetOnLoaded;
 
         IInputService _inputManager;
         Dictionary<TileType, TileBase> _tileBases;
@@ -46,6 +47,11 @@ namespace Panteon2DStrategy.Managers
             _tileBases.Add(TileType.White, Resources.Load<TileBase>(path +"White"));
             _tileBases.Add(TileType.Red, Resources.Load<TileBase>(path+"Red"));
             _tileBases.Add(TileType.Blue, Resources.Load<TileBase>(path+"Blue"));
+
+            foreach (TileBuildingController tileBuildingController in _tileBuildingSetOnLoaded)
+            {
+                tileBuildingController.Place(this);
+            }
         }
 
         void Update()
