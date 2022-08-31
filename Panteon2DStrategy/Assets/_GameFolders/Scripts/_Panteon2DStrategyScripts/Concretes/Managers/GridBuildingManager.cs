@@ -87,9 +87,14 @@ namespace Panteon2DStrategy.Managers
             }
             else if (_inputManager.CenterButtonDown)
             {
-                ClearArea();
-                Destroy(_tempBuildingController.gameObject);
+                DestroyTempBuilding();
             }
+        }
+
+        private void DestroyTempBuilding()
+        {
+            ClearArea();
+            Destroy(_tempBuildingController.gameObject);
         }
 
         private void ClearArea()
@@ -130,6 +135,8 @@ namespace Panteon2DStrategy.Managers
 
         public void InitializeWithBuilding(GameObject building)
         {
+            if(_tempBuildingController != null) DestroyTempBuilding();
+            
             _tempBuildingController = Instantiate(building, CacheHelper.Zero, CacheHelper.Identity)
                 .GetComponent<TileBuildingController>();
             FollowBuilding();
