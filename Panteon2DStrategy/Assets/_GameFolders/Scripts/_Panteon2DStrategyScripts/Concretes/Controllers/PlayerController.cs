@@ -12,14 +12,14 @@ namespace Panteon2DStrategy.Controllers
     public class PlayerController : MonoBehaviour, IPlayerController
     {
         [SerializeField] Transform _transform;
-        [SerializeField] Transform _moverObject;
-        
+        [SerializeField] Transform _virtualCameraTransform;
+
         IMovementService _moveManager;
 
         public Transform Transform => _transform;
         public IInputService InputManager { get; set; }
         public Camera MainCamera { get; private set; }
-        public Transform TargetMover => _moverObject;
+        public Transform VirtualCameraTransform => _virtualCameraTransform;
 
         void Awake()
         {

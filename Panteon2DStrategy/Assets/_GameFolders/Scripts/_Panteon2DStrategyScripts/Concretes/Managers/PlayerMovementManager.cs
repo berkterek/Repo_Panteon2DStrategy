@@ -13,10 +13,10 @@ namespace Panteon2DStrategy.Managers
         readonly IPlayerController _playerController;
         readonly Dictionary<MoveType, IMoverDal> _moveDalDictionary;
 
+        IMoverDal _currentDal;
+
         //TODO this code will refactor
         public float Speed => Time.deltaTime * 50f;
-
-        IMoverDal _currentDal;
 
         public PlayerMovementManager(PlayerMovementViewModel viewModel)
         {
@@ -35,14 +35,22 @@ namespace Panteon2DStrategy.Managers
             if (keyboardDirection != CacheHelper.Zero)
             {
                 _currentDal = _moveDalDictionary[MoveType.Transform];
+                
+                //TODO this code speed value will be refactor
                 _currentDal.Tick(Speed * keyboardDirection);
                 return;
             }
 
-            Vector2 mousePosition = _playerController.InputManager.MousePosition;
-            Vector2 worldPosition = _playerController.MainCamera.ScreenToWorldPoint(mousePosition);
-            _currentDal = _moveDalDictionary[MoveType.MousePosition];
-            _currentDal.Tick(worldPosition);
+            Vector3 mousePosition = _playerController.InputManager.MousePosition;
+
+            if (mousePosition.y >= Screen.height * 0.95f || mousePosition.y <= Screen.height * 0.05f ||
+                mousePosition.x >= Screen.width * 0.95f || mousePosition.x <= Screen.width * 0.05f)
+            {
+                Vector2 worldPosition = _playerController.MainCamera.ScreenToWorldPoint(mousePosition);
+
+                _currentDal = _moveDalDictionary[MoveType.MousePosition];
+                _currentDal.Tick(worldPosition);    
+            }
         }
 
         public void FixedTick()

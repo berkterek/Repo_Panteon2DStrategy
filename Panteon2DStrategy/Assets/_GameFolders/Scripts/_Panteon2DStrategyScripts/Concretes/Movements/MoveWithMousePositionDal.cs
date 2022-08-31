@@ -4,26 +4,27 @@ using UnityEngine;
 
 namespace Panteon2DStrategy.Managers
 {
-    public class MoveWithMousePosition : IMoverDal
+    public class MoveWithMousePositionDal : IMoverDal
     {
         readonly Transform _transform;
-        Vector2 _direction;
+        Vector3 _direction;
 
         public MoveType Type => MoveType.MousePosition;
 
-        public MoveWithMousePosition(Transform transform)
+        public MoveWithMousePositionDal(Transform transform)
         {
             _transform = transform;
         }
 
         public void Tick(Vector2 direction)
         {
-            _direction = direction;
+            _direction = new Vector3(direction.x, direction.y, -10f);
         }
 
         public void FixedTick()
         {
-            _transform.position = _direction;
+            //TODO This code speed value will be refactor
+            _transform.position = Vector3.Lerp(_transform.position, _direction, Time.deltaTime * 1.3f);
         }
     }
 }

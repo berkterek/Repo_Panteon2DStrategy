@@ -13,7 +13,7 @@ namespace Panteon2DStrategy.Factories
             var moveViewModel = new PlayerMovementViewModel();
             moveViewModel.PlayerController = playerController;
             moveViewModel.MoverDalArray = new IMoverDal[]
-                { new MoveWithMousePosition(playerController.TargetMover), new MoveWithTransformDal(playerController.TargetMover)};
+                { new MoveWithMousePositionDal(playerController.VirtualCameraTransform), new MoveWithTransformDal(playerController.VirtualCameraTransform)};
 
             return moveViewModel;
         }

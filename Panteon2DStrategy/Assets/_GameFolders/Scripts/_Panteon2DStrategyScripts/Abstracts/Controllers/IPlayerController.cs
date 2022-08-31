@@ -7,6 +7,6 @@ namespace Panteon2DStrategy.Abstracts.Controllers
     {
         IInputService InputManager { get; set; }
         Camera MainCamera { get; }
-        Transform TargetMover { get; }
+        Transform VirtualCameraTransform { get; }
     }
 }
