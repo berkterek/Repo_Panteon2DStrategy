@@ -299,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1246194665771547372, guid: ba21f43173682de43a2e856305389aeb, type: 3}
       propertyPath: m_Name
-      value: MainBaseBuilding
+      value: Player1MainBaseBuilding
       objectReference: {fileID: 0}
     - target: {fileID: 8173730019334055188, guid: ba21f43173682de43a2e856305389aeb, type: 3}
       propertyPath: m_Size.x
@@ -319,29 +319,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba21f43173682de43a2e856305389aeb, type: 3}
---- !u!1 &7239816549188563456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1246194665771547372, guid: ba21f43173682de43a2e856305389aeb, type: 3}
-  m_PrefabInstance: {fileID: 8445271543049373932}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9158780320463165874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 732159931740311902, guid: ba21f43173682de43a2e856305389aeb, type: 3}
   m_PrefabInstance: {fileID: 8445271543049373932}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &7870697347723826602
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7239816549188563456}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.03, y: 2.24}
-  serializedVersion: 2
-  m_Radius: 1.99

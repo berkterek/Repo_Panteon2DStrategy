@@ -24,7 +24,7 @@ namespace Panteon2DStrategy.Managers
         public void FixedTick()
         {
             //TODO This code speed value will be refactor
-            _transform.position = Vector3.Lerp(_transform.position, _direction, Time.deltaTime * 1.3f);
+            _transform.position = Vector3.Lerp(_transform.position, _direction, Time.deltaTime * 1.1f);
         }
     }
 }
