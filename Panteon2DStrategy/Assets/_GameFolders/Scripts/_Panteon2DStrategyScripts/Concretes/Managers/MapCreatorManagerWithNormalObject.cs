@@ -14,7 +14,7 @@ namespace Panteon2DStrategy.Managers
         [SerializeField] int _creationCount = 100;
         [SerializeField] Transform _transform;
         [SerializeField] TilemapParentController _tilemapParentPrefab;
-        [SerializeField] TilemapParentDataContainer[] _parentDataContainers;
+        [SerializeField] TilemapParentDataContainerSO[] _parentDataContainers;
 
         Dictionary<ITilemapParentController, List<ITilemapChildController>> _tilemaps;
 

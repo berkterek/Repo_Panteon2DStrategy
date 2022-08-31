@@ -41,6 +41,8 @@ namespace Panteon2DStrategy.Controllers
             var area = GetArea(gridManager);
             
             gridManager.TakeArea(area);
+            
+            //TODO set which player own this building
         }
 
         private BoundsInt GetArea(GridBuildingManager gridManager)

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Panteon2DStrategy.Abstracts.Helpers;
 using Panteon2DStrategy.Abstracts.Inputs;
 using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
@@ -10,7 +11,7 @@ using UnityEngine.Tilemaps;
 
 namespace Panteon2DStrategy.Managers
 {
-    public class GridBuildingManager : MonoBehaviour
+    public class GridBuildingManager : SingletonDestroyObject<GridBuildingManager>
     {
         [SerializeField] GridLayout _gridLayout;
         [SerializeField] Tilemap _mainTilemap;
@@ -28,6 +29,7 @@ namespace Panteon2DStrategy.Managers
         
         void Awake()
         {
+            SetSingleton(this);
             this.GetReference<GridLayout>(ref _gridLayout);
             _tileBases = new Dictionary<TileType, TileBase>();
             _mainCamera = Camera.main;

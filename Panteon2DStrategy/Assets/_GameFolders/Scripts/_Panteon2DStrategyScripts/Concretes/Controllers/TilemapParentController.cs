@@ -8,7 +8,7 @@ namespace Panteon2DStrategy.Controllers
     public class TilemapParentController : MonoBehaviour,ITilemapParentController
     {
         [SerializeField] TilemapChildController tilemapChildPrefab;
-        [SerializeField] TilemapParentDataContainer _tilemapParentDataContainer;
+        [SerializeField] TilemapParentDataContainerSO _tilemapParentDataContainer;
         [SerializeField] Transform _transform;
         [SerializeField] TilemapChildController[] _children;
 
@@ -34,7 +34,7 @@ namespace Panteon2DStrategy.Controllers
             CreateAndSetChildren();
         }
 
-        public void Bind(TilemapParentDataContainer tilemapParentDataContainer)
+        public void Bind(TilemapParentDataContainerSO tilemapParentDataContainer)
         {
             _tilemapParentDataContainer = tilemapParentDataContainer;
         }
@@ -75,6 +75,6 @@ namespace Panteon2DStrategy.Controllers
     {
         ITilemapChildController[] TileMapChildren { get; }
         void CleanAndGetChildren();
-        void Bind(TilemapParentDataContainer tilemapParentDataContainer);
+        void Bind(TilemapParentDataContainerSO tilemapParentDataContainer);
     }
 }
