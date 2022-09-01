@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867a2c5b39538ea4faaf53ff7957077e, type: 3}
   m_Name: Soldier1ProductionDataContainer
   m_EditorClassIdentifier: 
-  _name: Soldier 1 Building
+  _name: Soldier 1
   _description: 
   _icon: {fileID: 21300000, guid: 194df7839c07c2641b97ce0504f7e6f7, type: 3}
   _prefab: {fileID: 784041891778370257, guid: 154c24de88b2dd045990822fe597f20c, type: 3}

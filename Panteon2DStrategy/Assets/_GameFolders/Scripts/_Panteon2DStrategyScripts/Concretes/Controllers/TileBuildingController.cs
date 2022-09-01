@@ -1,4 +1,5 @@
 ﻿using Panteon2DStrategy.Managers;
+using Panteon2DStrategy.ScriptableObjects;
 using Panteon2DStrategyScripts.Helpers;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace Panteon2DStrategy.Controllers
         [SerializeField] Transform _transform;
         [SerializeField] BoundsInt _area;
         [SerializeField] bool _isPlaced = false;
+        [SerializeField] WorldCanvasController _worldCanvasController;
+        [SerializeField] ProductionDataContainerSO _productionDataContainer;
 
         public bool IsPlaced => _isPlaced;
         public BoundsInt Area
@@ -39,6 +42,14 @@ namespace Panteon2DStrategy.Controllers
         public void Place(GridBuildingManager gridManager)
         {
             var area = GetArea(gridManager);
+
+            if (_productionDataContainer == null)
+            {
+                _productionDataContainer = gridManager.TempDataContainer;    
+            }
+            
+            _worldCanvasController.gameObject.SetActive(true);
+            _worldCanvasController.Bind(_productionDataContainer.Name);
             
             gridManager.TakeArea(area);
             

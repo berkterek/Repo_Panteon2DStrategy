@@ -47,7 +47,7 @@ namespace Panteon2DStrategy.Controllers
         
         void HandleOnButtonClicked()
         {
-            GridBuildingManager.Instance.InitializeWithBuilding(_productionDataContainer.Prefab);
+            GridBuildingManager.Instance.InitializeWithBuilding(_productionDataContainer);
         }
     }    
 }

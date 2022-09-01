@@ -301,6 +301,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2MainBaseBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 4122925085622096796, guid: ba21f43173682de43a2e856305389aeb, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393491606033858376, guid: ba21f43173682de43a2e856305389aeb, type: 3}
+      propertyPath: _productionDataContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 75910400f0919f74b81473e920b16b30, type: 2}
     - target: {fileID: 8173730019334055188, guid: ba21f43173682de43a2e856305389aeb, type: 3}
       propertyPath: m_Size.x
       value: 4

@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1246194665771547372, guid: ba21f43173682de43a2e856305389aeb, type: 3}
       propertyPath: m_Name
-      value: Solderi1Building
+      value: Soldier1Building
       objectReference: {fileID: 0}
     - target: {fileID: 7048820585654902972, guid: ba21f43173682de43a2e856305389aeb, type: 3}
       propertyPath: m_LocalPosition.x
