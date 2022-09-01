@@ -24,7 +24,15 @@ namespace Panteon2DStrategy.Controllers
 
         void Start()
         {
-            _iconImage.sprite = _productionDataContainer.Icon;
+            if (_productionDataContainer == null)
+            {
+                _button.interactable = false;
+            }
+            else
+            {
+                _button.interactable = true;
+                _iconImage.sprite = _productionDataContainer.Icon;
+            }
         }
 
         void OnEnable()
