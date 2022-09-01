@@ -429,7 +429,7 @@ MonoBehaviour:
   _scrollRect: {fileID: 1209660789}
   _transform: {fileID: 1209660788}
   _outOfBoundsThreshold: 40
-  _childWidth: 125
+  _childWidth: 250
   _childHeight: 125
   _itemSpacing: 30
 --- !u!1 &1495206005
