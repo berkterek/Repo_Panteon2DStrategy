@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Panteon2DStrategy.Helpers
+{
+    public class BodyRotationSetterHelper : MonoBehaviour
+    {
+        [SerializeField] Transform _parent;
+        [SerializeField] Transform _child;
+
+        void Update()
+        {
+            _child.transform.localEulerAngles = new Vector3(0f, 0f, -_parent.rotation.eulerAngles.z);
+        }
+    }    
+}
+
