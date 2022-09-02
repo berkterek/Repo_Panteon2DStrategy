@@ -32,7 +32,7 @@ namespace Panteon2DStrategy.Managers
         public void Tick()
         {
             Vector2 keyboardDirection = _playerController.InputManager.KeyboardDirection;
-            if (keyboardDirection != CacheHelper.Zero)
+            if (keyboardDirection != DirectionCacheHelper.Zero)
             {
                 _currentDal = _moveDalDictionary[MoveType.Transform];
                 

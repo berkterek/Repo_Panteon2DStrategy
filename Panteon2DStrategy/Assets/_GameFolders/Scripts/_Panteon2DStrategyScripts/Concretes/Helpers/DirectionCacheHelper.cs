@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Panteon2DStrategy.Helpers
 {
-    public static class CacheHelper
+    public static class DirectionCacheHelper
     {
         public static Vector2 Zero { get; }
         public static Vector2 Left { get; }
@@ -11,7 +11,7 @@ namespace Panteon2DStrategy.Helpers
         public static Vector2 Down { get; }
         public static Quaternion Identity { get; }
         
-        static CacheHelper()
+        static DirectionCacheHelper()
         {
             Zero = Vector2.zero;
             Left = Vector2.left;

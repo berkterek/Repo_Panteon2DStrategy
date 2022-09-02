@@ -143,7 +143,7 @@ namespace Panteon2DStrategy.Managers
             if(_tempBuildingController != null) DestroyTempBuilding();
 
             _tempDataContainer = data;
-            _tempBuildingController = Instantiate(data.Prefab, CacheHelper.Zero, CacheHelper.Identity)
+            _tempBuildingController = Instantiate(data.Prefab, DirectionCacheHelper.Zero, DirectionCacheHelper.Identity)
                 .GetComponent<TileBuildingController>();
             FollowBuilding();
         }

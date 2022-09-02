@@ -39,11 +39,11 @@ namespace Movements
             IMovementService movementManager = new PlayerMovementManager(_viewModel);
 
             //Act
-            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(CacheHelper.Left);
+            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(DirectionCacheHelper.Left);
             movementManager.Tick();
 
             //Assert
-            _viewModel.MoverDalArray[0].Received().Tick(movementManager.Speed * CacheHelper.Left);
+            _viewModel.MoverDalArray[0].Received().Tick(movementManager.Speed * DirectionCacheHelper.Left);
         }
 
         [Test]
@@ -53,11 +53,11 @@ namespace Movements
             IMovementService movementManager = new PlayerMovementManager(_viewModel);
 
             //Act
-            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(CacheHelper.Zero);
+            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(DirectionCacheHelper.Zero);
             movementManager.Tick();
 
             //Assert
-            _viewModel.MoverDalArray[1].Received().Tick(CacheHelper.Zero);
+            _viewModel.MoverDalArray[1].Received().Tick(DirectionCacheHelper.Zero);
         }
         
         [Test]
@@ -67,7 +67,7 @@ namespace Movements
             IMovementService movementManager = new PlayerMovementManager(_viewModel);
 
             //Act
-            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(CacheHelper.Left);
+            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(DirectionCacheHelper.Left);
             movementManager.Tick();
             movementManager.FixedTick();
 
@@ -82,7 +82,7 @@ namespace Movements
             IMovementService movementManager = new PlayerMovementManager(_viewModel);
 
             //Act
-            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(CacheHelper.Zero);
+            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(DirectionCacheHelper.Zero);
             movementManager.Tick();
             movementManager.FixedTick();
 

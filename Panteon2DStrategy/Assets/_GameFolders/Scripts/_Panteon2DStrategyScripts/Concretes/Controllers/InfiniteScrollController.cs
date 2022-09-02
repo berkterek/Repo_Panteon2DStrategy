@@ -45,9 +45,9 @@ namespace Panteon2DStrategy.Controllers
             while (counter < 100)
             {
                 _positiveDrag = true;
-                HandleHorizontalScroll(CacheHelper.Zero);
+                HandleHorizontalScroll(DirectionCacheHelper.Zero);
                 counter++;
-                _scrollRect.content.transform.Translate(Time.deltaTime * 3f * CacheHelper.Up);
+                _scrollRect.content.transform.Translate(Time.deltaTime * 3f * DirectionCacheHelper.Up);
                 yield return null;
             }
         }
