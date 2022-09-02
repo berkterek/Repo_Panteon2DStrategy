@@ -1,11 +1,11 @@
 using NUnit.Framework;
-using Panteon2DStrategy.Managers;
 using NSubstitute;
 using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Inputs;
 using Panteon2DStrategy.Abstracts.Movements;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Helpers;
+using Panteon2DStrategy.Managers.Movements;
 using Panteon2DStrategy.ViewModels;
 using UnityEngine;
 

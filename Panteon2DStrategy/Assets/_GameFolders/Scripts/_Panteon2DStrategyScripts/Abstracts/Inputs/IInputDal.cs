@@ -9,5 +9,6 @@ namespace Panteon2DStrategy.Abstracts.Inputs
         bool IsLeftButton { get; }
         bool IsRightButtonDown { get; }
         bool IsCenterButtonDown { get; }
+        bool IsLeftButtonDown { get; }
     }
 }

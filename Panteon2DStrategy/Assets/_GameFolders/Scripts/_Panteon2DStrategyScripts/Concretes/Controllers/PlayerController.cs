@@ -4,6 +4,7 @@ using Panteon2DStrategy.Abstracts.Movements;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Factories;
 using Panteon2DStrategy.Managers;
+using Panteon2DStrategy.Managers.Movements;
 using Panteon2DStrategyScripts.Helpers;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Panteon2DStrategy.Controllers
 {
     public class PlayerController : MonoBehaviour, IPlayerController
     {
+        [SerializeField] PlayerType _playerType;
         [SerializeField] Transform _transform;
         [SerializeField] Transform _virtualCameraTransform;
 

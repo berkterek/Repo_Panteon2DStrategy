@@ -10,5 +10,6 @@ namespace Panteon2DStrategy.Inputs
         public bool IsLeftButton { get; }
         public bool IsRightButtonDown { get; }
         public bool IsCenterButtonDown { get; }
+        public bool IsLeftButtonDown { get; }
     }
 }

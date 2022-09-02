@@ -21,5 +21,6 @@ namespace Panteon2DStrategy.Inputs
         public bool IsLeftButton => Input.GetMouseButton(0);
         public bool IsRightButtonDown => Input.GetMouseButtonDown(1);
         public bool IsCenterButtonDown => Input.GetMouseButtonDown(2);
+        public bool IsLeftButtonDown => Input.GetMouseButtonDown(0);
     }
 }

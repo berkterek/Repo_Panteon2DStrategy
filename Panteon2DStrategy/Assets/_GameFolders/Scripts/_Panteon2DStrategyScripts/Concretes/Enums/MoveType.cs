@@ -3,6 +3,7 @@
     public enum MoveType : byte
     {
         Transform,
-        MousePosition
+        MousePosition,
+        DirectionPosition
     }
 }

@@ -7,6 +7,7 @@ namespace Panteon2DStrategy.Abstracts.Inputs
         Vector2 MousePosition { get; }
         Vector2 KeyboardDirection { get; }
         bool IsLeftButton { get; }
+        bool IsLeftButtonDown { get; }
         bool IsRightButtonDown { get; }
         bool CenterButtonDown { get; }
     }

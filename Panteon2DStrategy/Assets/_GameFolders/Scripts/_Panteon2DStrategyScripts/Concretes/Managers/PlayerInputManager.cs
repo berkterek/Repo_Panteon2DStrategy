@@ -14,6 +14,7 @@ namespace Panteon2DStrategy.Managers
         public Vector2 MousePosition => _inputDal.MousePosition;
         public Vector2 KeyboardDirection => _inputDal.KeyboardDirection;
         public bool IsLeftButton => _inputDal.IsLeftButton;
+        public bool IsLeftButtonDown => _inputDal.IsLeftButtonDown;
         public bool IsRightButtonDown => _inputDal.IsRightButtonDown;
         public bool CenterButtonDown => _inputDal.IsCenterButtonDown;
 
