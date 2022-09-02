@@ -1,3 +1,4 @@
+using System.Linq;
 using Panteon2DStrategy.Abstracts.Helpers;
 using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
@@ -14,6 +15,11 @@ namespace Panteon2DStrategy.Managers
         void Awake()
         {
             SetSingleton(this);
+        }
+
+        public PlayerManagerInspector GetPlayer(PlayerType playerType)
+        {
+            return _players.FirstOrDefault(x => x.PlayerType == playerType);
         }
     }
 
