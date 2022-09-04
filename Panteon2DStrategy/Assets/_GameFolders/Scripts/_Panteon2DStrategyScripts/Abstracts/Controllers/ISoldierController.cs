@@ -1,5 +1,6 @@
 ﻿using Panteon2DStrategy.Abstracts.Animations;
 using Panteon2DStrategy.Abstracts.Movements;
+using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.ScriptableObjects;
 using UnityEngine;
 
@@ -12,5 +13,7 @@ namespace Panteon2DStrategy.Abstracts.Controllers
         ISoldierStats Stats { get; }
         ISoldierAnimationService AnimationManager { get; }
         IMovementService MovementManager { get; }
+        void SetDestination(Vector3 position);
+        void SetPlayer(PlayerType playerType);
     }
 }

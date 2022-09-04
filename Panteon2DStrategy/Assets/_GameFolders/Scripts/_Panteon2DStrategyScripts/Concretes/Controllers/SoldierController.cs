@@ -95,5 +95,15 @@ namespace Panteon2DStrategy.Controllers
             _isSelected = false;
             OnToggleValueChanged?.Invoke(_isSelected);
         }
+
+        public void SetDestination(Vector3 position)
+        {
+            _destinationTarget.position = position;
+        }
+
+        public void SetPlayer(PlayerType playerType)
+        {
+            _playerType = playerType;
+        }
     }
 }

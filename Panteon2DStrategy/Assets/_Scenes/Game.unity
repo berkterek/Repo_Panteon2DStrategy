@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e19535ce2629f42b8b4cf33730252a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameEventListener: {fileID: 0}
+  _gameEventListener: {fileID: 125302265}
   _informationInspectors:
   - _infoType: 0
     _infoPanel: {fileID: 1341395252}
@@ -850,6 +850,10 @@ PrefabInstance:
     - target: {fileID: 5819993905383096909, guid: 7d48596cc0fa2694fb8300e3e4ca25c7, type: 3}
       propertyPath: _playerType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819993905530374056, guid: 7d48596cc0fa2694fb8300e3e4ca25c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

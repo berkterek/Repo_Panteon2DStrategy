@@ -14,7 +14,7 @@ namespace Panteon2DStrategy.Abstracts.Controllers
         [BoxGroup("Game Event")] [SerializeField]
         protected GameEvent _gameEvent;
         [BoxGroup("Base Info")]
-        [SerializeField] PlayerType _playerType = PlayerType.NotSelected;
+        [SerializeField] protected PlayerType _playerType = PlayerType.NotSelected;
         [BoxGroup("Base Info")]
         [SerializeField] Transform _transform;
         [BoxGroup("Base Info")]

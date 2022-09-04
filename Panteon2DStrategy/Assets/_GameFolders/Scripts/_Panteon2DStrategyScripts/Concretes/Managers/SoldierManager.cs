@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Helpers;
 using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
@@ -23,9 +24,9 @@ namespace Panteon2DStrategy.Managers
             SetSingleton(this);
         }
         
-        public void SetSoldierToPlayer(SoldierController soldier)
+        public void SetSoldierToPlayer(ISoldierController soldier)
         {
-            _soldiers.FirstOrDefault(x => x.PlayerType == ControlSystem.Instance.CurrentPlayerData.PlayerType).ValuesList.Add(soldier);
+            _soldiers.FirstOrDefault(x => x.PlayerType == ControlSystem.Instance.CurrentPlayerData.PlayerType).ValuesList.Add(soldier as SoldierController);
             AstarPath.active.Scan();
         }
     }

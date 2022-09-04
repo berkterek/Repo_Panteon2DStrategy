@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2315190954082959003}
   - component: {fileID: 2315190954082959000}
   - component: {fileID: 1786580570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 1330901229}
   - component: {fileID: 1330901230}
   - component: {fileID: 1524716458131152507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BaseSoldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,6 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44214d0ce4e8834d98d348828cb9089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 0}
+  _soldierDataContainer: {fileID: 0}
   _soldierStats: {fileID: 0}
   _playerType: 0
   _transform: {fileID: 2315190955963100980}
