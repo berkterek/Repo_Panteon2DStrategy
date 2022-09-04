@@ -36,12 +36,14 @@ namespace Panteon2DStrategy.Abstracts.Controllers
         {
             this.GetReference(ref _transform);
             this.GetReference(ref _worldCanvasController);
+            SetAreaSize();
         }
 
         protected virtual void OnValidate()
         {
             this.GetReference(ref _transform);
             this.GetReference(ref _worldCanvasController);
+            SetAreaSize();
         }
 
         public bool CanBePlaced(GridBuildingManager gridManager)
@@ -95,7 +97,7 @@ namespace Panteon2DStrategy.Abstracts.Controllers
 
         private void SetAreaSize()
         {
-            if (_area.size != DirectionCacheHelper.Vector3IntZero)
+            if (_area.size == DirectionCacheHelper.Vector3IntZero)
             {
                 SetSize();
             }

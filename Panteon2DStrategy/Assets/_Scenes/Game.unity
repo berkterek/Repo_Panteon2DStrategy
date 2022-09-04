@@ -441,6 +441,30 @@ PrefabInstance:
       propertyPath: _productionDataContainer
       value: 
       objectReference: {fileID: 11400000, guid: 27a779576d5a6e747af79f67572bdbf6, type: 2}
+    - target: {fileID: 1106405078, guid: f632468498f7a7e439ee04c09abc5e88, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106405078, guid: f632468498f7a7e439ee04c09abc5e88, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: b8fe14d6574787848a144c9e06725101, type: 3}
+    - target: {fileID: 1209660790, guid: f632468498f7a7e439ee04c09abc5e88, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209660790, guid: f632468498f7a7e439ee04c09abc5e88, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: b8fe14d6574787848a144c9e06725101, type: 3}
+    - target: {fileID: 2023324898, guid: f632468498f7a7e439ee04c09abc5e88, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023324898, guid: f632468498f7a7e439ee04c09abc5e88, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: b8fe14d6574787848a144c9e06725101, type: 3}
     - target: {fileID: 3405591563650634415, guid: f632468498f7a7e439ee04c09abc5e88, type: 3}
       propertyPath: m_Name
       value: InGameCanvas
