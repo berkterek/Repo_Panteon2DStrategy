@@ -3,7 +3,6 @@ using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Helpers;
 using Panteon2DStrategy.Abstracts.Inputs;
 using Panteon2DStrategy.Abstracts.ScriptableObjects;
-using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Helpers;
 using Panteon2DStrategyScripts.Helpers;
@@ -136,7 +135,7 @@ namespace Panteon2DStrategy.Managers
         {
             if(_tempBuildingController != null) DestroyTempBuilding();
 
-            _tempBuildingController = Instantiate(data.Prefab, DirectionCacheHelper.Zero, DirectionCacheHelper.Identity)
+            _tempBuildingController = Instantiate(data.Prefab, DirectionCacheHelper.Vector2Zero, DirectionCacheHelper.Identity)
                 .GetComponent<BaseTileBuildingController>();
             FollowBuilding();
         }

@@ -53,11 +53,11 @@ namespace Movements
             IMovementService movementManager = new PlayerMovementManager(_viewModel);
 
             //Act
-            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(DirectionCacheHelper.Zero);
+            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(DirectionCacheHelper.Vector2Zero);
             movementManager.Tick();
 
             //Assert
-            _viewModel.MoverDalArray[1].Received().Tick(DirectionCacheHelper.Zero);
+            _viewModel.MoverDalArray[1].Received().Tick(DirectionCacheHelper.Vector2Zero);
         }
         
         [Test]
@@ -82,7 +82,7 @@ namespace Movements
             IMovementService movementManager = new PlayerMovementManager(_viewModel);
 
             //Act
-            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(DirectionCacheHelper.Zero);
+            _viewModel.PlayerController.InputManager.KeyboardDirection.Returns(DirectionCacheHelper.Vector2Zero);
             movementManager.Tick();
             movementManager.FixedTick();
 

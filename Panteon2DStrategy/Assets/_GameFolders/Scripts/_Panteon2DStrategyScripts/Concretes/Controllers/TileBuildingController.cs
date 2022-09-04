@@ -8,9 +8,8 @@ namespace Panteon2DStrategy.Controllers
     {
         [SerializeField] BuildingDataContainerSO _buildingDataContainer;
 
-        protected override void OnValidate()
+        protected override void SetSize()
         {
-            base.OnValidate();
             _area.size = _buildingDataContainer.Area.size;
         }
 

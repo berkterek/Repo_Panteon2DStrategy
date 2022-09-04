@@ -1,5 +1,6 @@
 ﻿using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
+using Panteon2DStrategy.Helpers;
 using Panteon2DStrategy.Managers;
 using Panteon2DStrategyScripts.Helpers;
 using Sirenix.OdinInspector;
@@ -31,7 +32,7 @@ namespace Panteon2DStrategy.Abstracts.Controllers
         
         public event System.Action<bool> OnToggleValueChanged;
 
-        void Awake()
+        protected virtual void Awake()
         {
             this.GetReference(ref _transform);
             this.GetReference(ref _worldCanvasController);
@@ -91,6 +92,16 @@ namespace Panteon2DStrategy.Abstracts.Controllers
             _isSelected = false;
             OnToggleValueChanged?.Invoke(_isSelected);
         }
+
+        private void SetAreaSize()
+        {
+            if (_area.size != DirectionCacheHelper.Vector3IntZero)
+            {
+                SetSize();
+            }
+        }
+
+        protected abstract void SetSize();
 
         protected abstract void Bind();
     }

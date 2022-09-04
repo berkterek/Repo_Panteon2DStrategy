@@ -10,9 +10,8 @@ namespace Panteon2DStrategy.Controllers
         [BoxGroup("Soldier Info")] [SerializeField]
         SoldierBuildingDataContainerSO _buildingDataContainer;
 
-        protected override void OnValidate()
+        protected override void SetSize()
         {
-            base.OnValidate();
             _area.size = _buildingDataContainer.Area.size;
         }
 
