@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace Panteon2DStrategy.Managers
 {
-    public class SoldierAnimationManager : ISoldierAnimationService
+    public class SoldierAnimationAiPathManager : ISoldierAnimationService
     {
         readonly IAnimationDal _animationDal;
         readonly AIPath _aiPath;
         
         Vector3 _velocity;
         
-        public SoldierAnimationManager(ISoldierController soldierController, IAnimationDal animationDal)
+        public SoldierAnimationAiPathManager(ISoldierController soldierController, IAnimationDal animationDal)
         {
             _animationDal = animationDal;
             _aiPath = soldierController.Transform.GetComponent<AIPath>();

@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 2315190955963100978}
   - component: {fileID: 1330901229}
   - component: {fileID: 1330901230}
+  - component: {fileID: 1524716458131152507}
   m_Layer: 0
   m_Name: BaseSoldier
   m_TagString: Untagged
@@ -299,4 +300,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44214d0ce4e8834d98d348828cb9089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerType: 0
   _transform: {fileID: 2315190955963100980}
+  _destinationTarget: {fileID: 0}
+  _isSelected: 0
+--- !u!58 &1524716458131152507
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315190955963100969}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.011754304, y: 0.007836163}
+  serializedVersion: 2
+  m_Radius: 0.40204802

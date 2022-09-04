@@ -1,8 +1,8 @@
-using System;
 using Panteon2DStrategy.Abstracts.Animations;
 using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Movements;
 using Panteon2DStrategy.Animations;
+using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Managers;
 using Panteon2DStrategy.Managers.Movements;
 using Panteon2DStrategyScripts.Helpers;
@@ -12,6 +12,7 @@ namespace Panteon2DStrategy.Controllers
 {
     public class SoldierController : MonoBehaviour,ISoldierController
     {
+        [SerializeField] PlayerType _playerType;
         [SerializeField] Transform _transform;
         [SerializeField] Transform _destinationTarget;
         [SerializeField] bool _isSelected = false;
@@ -22,14 +23,15 @@ namespace Panteon2DStrategy.Controllers
         public ISoldierAnimationService AnimationManager { get; private set; }
         public IMovementService MovementManager { get; private set; }
         public Vector3 TargetPosition { get; set; }
-        
+        public PlayerType PlayerType => _playerType;
+
         public event System.Action<bool> OnToggleValueChanged;
 
         void Awake()
         {
             this.GetReference(ref _transform);
-            AnimationManager = new SoldierAnimationManager(this, new SoldierAnimatorDal(this));
-            MovementManager = new SoldierMovementManager(this, new MoveWithDirectPositionDal(_destinationTarget));
+            AnimationManager = new SoldierAnimationAiPathManager(this, new SoldierAnimatorDal(this));
+            MovementManager = new SoldierMovementAiPathManager(this, new MoveWithDirectPositionDal(_destinationTarget));
         }
 
         void OnValidate()
@@ -58,6 +60,12 @@ namespace Panteon2DStrategy.Controllers
             _isSelected = !_isSelected;
             OnToggleValueChanged?.Invoke(_isSelected);
         }
+        
+        public void Unselected()
+        {
+            _isSelected = false;
+            OnToggleValueChanged?.Invoke(_isSelected);
+        }
     }
 
     public interface ISoldierController : IEntityController,ICanSelectableController
@@ -72,6 +80,8 @@ namespace Panteon2DStrategy.Controllers
     {
         bool IsSelected { get; }
         void Toggle();
+        void Unselected();
         event System.Action<bool> OnToggleValueChanged;
+        PlayerType PlayerType { get; }
     }
 }
