@@ -316,9 +316,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buildingInspectors:
   - _playerType: 1
-    _valuesList: []
+    _valuesList:
+    - {fileID: 1245919225}
   - _playerType: 2
-    _valuesList: []
+    _valuesList:
+    - {fileID: 442537671}
 --- !u!1001 &423461371
 PrefabInstance:
   m_ObjectHideFlags: 0
