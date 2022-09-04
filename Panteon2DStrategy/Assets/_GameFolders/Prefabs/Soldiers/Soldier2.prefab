@@ -8,9 +8,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1330901230, guid: 2130642196ccb32438bbd5d0ec642f0c, type: 3}
+      propertyPath: _gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: b320002d9c8c50a49866ccf24e339ce4, type: 2}
+    - target: {fileID: 1330901230, guid: 2130642196ccb32438bbd5d0ec642f0c, type: 3}
       propertyPath: _soldierStats
       value: 
       objectReference: {fileID: 11400000, guid: 0dc339823356dc042b9b05b555b1e602, type: 2}
+    - target: {fileID: 1330901230, guid: 2130642196ccb32438bbd5d0ec642f0c, type: 3}
+      propertyPath: _soldierDataContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 179eb75b45f63e342a31c84743c32b49, type: 2}
     - target: {fileID: 1786580570, guid: 2130642196ccb32438bbd5d0ec642f0c, type: 3}
       propertyPath: m_Controller
       value: 

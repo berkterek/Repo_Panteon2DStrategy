@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Panteon2DStrategy.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "New Game Event",menuName = "Algebra Global/Events/Game Event")]
+    [CreateAssetMenu(fileName = "New Game Event",menuName = "Panteon/Events/Game Event")]
     public class GameEvent : ScriptableObject
     {
         HashSet<BaseGameEventListener> _gameEventListeners;

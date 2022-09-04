@@ -364,11 +364,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755709dfb0544973ac4cfac768ddb528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: b320002d9c8c50a49866ccf24e339ce4, type: 2}
   _playerType: 2
   _transform: {fileID: 9158780320463165874}
   _area:
     m_Position: {x: 0, y: 0, z: 0}
-    m_Size: {x: 0, y: 0, z: 0}
+    m_Size: {x: 4, y: 4, z: 1}
   _isPlaced: 0
   _isSelected: 0
   _worldCanvasController: {fileID: 7725121083803288135}

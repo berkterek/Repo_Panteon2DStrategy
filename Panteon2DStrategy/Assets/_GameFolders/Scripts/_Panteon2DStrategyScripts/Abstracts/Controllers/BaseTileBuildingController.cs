@@ -2,6 +2,7 @@
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Helpers;
 using Panteon2DStrategy.Managers;
+using Panteon2DStrategy.ScriptableObjects;
 using Panteon2DStrategyScripts.Helpers;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -10,6 +11,8 @@ namespace Panteon2DStrategy.Abstracts.Controllers
 {
     public abstract class BaseTileBuildingController : MonoBehaviour,ICanSelectableController
     {
+        [BoxGroup("Game Event")] [SerializeField]
+        protected GameEvent _gameEvent;
         [BoxGroup("Base Info")]
         [SerializeField] PlayerType _playerType = PlayerType.NotSelected;
         [BoxGroup("Base Info")]
@@ -90,7 +93,7 @@ namespace Panteon2DStrategy.Abstracts.Controllers
 
             if (_isSelected)
             {
-                
+                InvokeEvent();
             }
         }
 
@@ -107,14 +110,16 @@ namespace Panteon2DStrategy.Abstracts.Controllers
                 SetSize();
             }
         }
-
-        protected abstract void SetSize();
-
-        protected abstract void Bind();
-
+        
         public void SetPlayer(PlayerType playerType)
         {
             _playerType = playerType;
         }
+
+        protected abstract void SetSize();
+
+        protected abstract void Bind();
+        
+        protected abstract void InvokeEvent();
     }
 }

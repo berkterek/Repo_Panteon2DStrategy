@@ -10,6 +10,6 @@ namespace Panteon2DStrategy.ScriptableObjects
         [BoxGroup("Soldier Object Info")] [SerializeField]
         SoldierDataContainerSO _soldierDataContainer;
 
-        public SoldierDataContainerSO SoldierObjectPrefab => _soldierDataContainer;
+        public SoldierDataContainerSO SoldierDataContainer => _soldierDataContainer;
     }
 }

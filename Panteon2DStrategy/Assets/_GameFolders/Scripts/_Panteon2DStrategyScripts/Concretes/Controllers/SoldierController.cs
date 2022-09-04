@@ -7,6 +7,7 @@ using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Managers;
 using Panteon2DStrategy.Managers.Movements;
 using Panteon2DStrategy.ScriptableObjects;
+using Panteon2DStrategy.ViewModels;
 using Panteon2DStrategyScripts.Helpers;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ namespace Panteon2DStrategy.Controllers
 {
     public class SoldierController : MonoBehaviour,ISoldierController
     {
+        [SerializeField] GameEvent _gameEvent;
+        [SerializeField] SoldierDataContainerSO _soldierDataContainer;
         [SerializeField] SoldierStatsSO _soldierStats;
         [SerializeField] PlayerType _playerType;
         [SerializeField] Transform _transform;
@@ -75,6 +78,16 @@ namespace Panteon2DStrategy.Controllers
         {
             _isSelected = !_isSelected;
             OnToggleValueChanged?.Invoke(_isSelected);
+
+            if (_isSelected)
+            {
+                InfoViewModel model = new InfoViewModel
+                {
+                    Soldier = _soldierDataContainer
+                };
+                
+                _gameEvent.InvokeEventsWithObject(model);
+            }
         }
         
         public void Unselected()

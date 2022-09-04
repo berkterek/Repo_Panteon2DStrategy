@@ -94,6 +94,22 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 586286549788932856, guid: e141ddbc618cc5543913588df2afcb60, type: 3}
+      propertyPath: _gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: b320002d9c8c50a49866ccf24e339ce4, type: 2}
+    - target: {fileID: 586286549788932856, guid: e141ddbc618cc5543913588df2afcb60, type: 3}
+      propertyPath: _area.m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 586286549788932856, guid: e141ddbc618cc5543913588df2afcb60, type: 3}
+      propertyPath: _area.m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 586286549788932856, guid: e141ddbc618cc5543913588df2afcb60, type: 3}
+      propertyPath: _area.m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 586286549788932856, guid: e141ddbc618cc5543913588df2afcb60, type: 3}
       propertyPath: _powerPlantDataContainer
       value: 
       objectReference: {fileID: 11400000, guid: 921ab23b3facb6a4891a5c34346a020b, type: 2}
