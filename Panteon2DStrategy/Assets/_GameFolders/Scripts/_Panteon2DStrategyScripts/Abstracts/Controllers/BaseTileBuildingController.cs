@@ -142,13 +142,7 @@ namespace Panteon2DStrategy.Abstracts.Controllers
         
         private void Dying()
         {
-            StartCoroutine(DyingProcessAsync());
-        }
-
-        private IEnumerator DyingProcessAsync()
-        {
             _collider2D.enabled = false;
-            yield return new WaitForSeconds(1f);
             BuildingManager.Instance.RemoveThisBuilding(this);
         }
 

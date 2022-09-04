@@ -39,11 +39,13 @@ namespace Panteon2DStrategy.Controllers
 
         protected override void OnEnable()
         {
+            base.OnEnable();
             _createButton.onClick.AddListener(HandleOnButtonClicked);
         }
 
         protected override void OnDisable()
         {
+            base.OnDisable();
             _createButton.onClick.RemoveListener(HandleOnButtonClicked);
         }
 
