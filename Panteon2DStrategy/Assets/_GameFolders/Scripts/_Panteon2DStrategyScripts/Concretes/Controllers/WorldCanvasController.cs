@@ -1,3 +1,5 @@
+using System;
+using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategyScripts.Helpers;
 using TMPro;
 using UnityEngine;
@@ -10,6 +12,8 @@ namespace Panteon2DStrategy.Controllers
         [SerializeField] Canvas _canvas;
         [SerializeField] TMP_Text _nameText;
         [SerializeField] Image _healthImage;
+
+        IBaseTileBuildingController _baseTileBuildingController;
         
         void Awake()
         {
@@ -26,9 +30,21 @@ namespace Panteon2DStrategy.Controllers
             _canvas.worldCamera = Camera.main;
         }
 
-        public void Bind(string name)
+        void OnDisable()
+        {
+            _baseTileBuildingController.HealthManager.OnTookDamage -= HandleOnTookDamage;
+        }
+
+        public void Bind(string name, IBaseTileBuildingController baseTileBuildingController)
         {
             _nameText.SetText(name);
+            _baseTileBuildingController = baseTileBuildingController;
+            _baseTileBuildingController.HealthManager.OnTookDamage += HandleOnTookDamage;
+        }
+
+        void HandleOnTookDamage(int maxHealth, int currentHealth)
+        {
+            _healthImage.fillAmount = (float)currentHealth / (float)maxHealth;
         }
     }    
 }

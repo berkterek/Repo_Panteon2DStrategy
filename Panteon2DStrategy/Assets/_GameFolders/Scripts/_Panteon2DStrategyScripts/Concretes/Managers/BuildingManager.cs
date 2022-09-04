@@ -41,5 +41,12 @@ namespace Panteon2DStrategy.Managers
                 }
             }
         }
+
+        public void RemoveThisBuilding(BaseTileBuildingController baseTileBuildingController)
+        {
+            _buildingInspectors.FirstOrDefault(x => x.PlayerType == baseTileBuildingController.PlayerType).ValuesList
+                .Remove(baseTileBuildingController);
+            Destroy(baseTileBuildingController.gameObject);
+        }
     }    
 }

@@ -144,12 +144,12 @@ namespace Panteon2DStrategy.Controllers
             _playerType = playerType;
         }
 
-        public void Dying()
+        private void Dying()
         {
             StartCoroutine(DyingProcessAsync());
         }
 
-        public IEnumerator DyingProcessAsync()
+        private IEnumerator DyingProcessAsync()
         {
             _collider2D.enabled = false;
             AnimationManager.Dying();

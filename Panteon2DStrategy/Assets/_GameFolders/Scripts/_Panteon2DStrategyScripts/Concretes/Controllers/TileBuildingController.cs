@@ -17,7 +17,7 @@ namespace Panteon2DStrategy.Controllers
         protected override void Bind()
         {
             //TODO this bind code will refactor
-            _worldCanvasController.Bind(_buildingDataContainer.Name);
+            _worldCanvasController.Bind(_buildingDataContainer.Name, this);
         }
 
         protected override void InvokeEvent()

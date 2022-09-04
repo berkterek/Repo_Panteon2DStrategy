@@ -37,12 +37,12 @@ namespace Panteon2DStrategy.Controllers
             this.GetReference(ref _createButton);
         }
 
-        void OnEnable()
+        protected override void OnEnable()
         {
             _createButton.onClick.AddListener(HandleOnButtonClicked);
         }
 
-        void OnDisable()
+        protected override void OnDisable()
         {
             _createButton.onClick.RemoveListener(HandleOnButtonClicked);
         }
@@ -55,7 +55,7 @@ namespace Panteon2DStrategy.Controllers
         protected override void Bind()
         {
             //TODO this bind code will refactor
-            _worldCanvasController.Bind(_buildingDataContainer.Name);
+            _worldCanvasController.Bind(_buildingDataContainer.Name, this);
         }
 
         protected override void InvokeEvent()
