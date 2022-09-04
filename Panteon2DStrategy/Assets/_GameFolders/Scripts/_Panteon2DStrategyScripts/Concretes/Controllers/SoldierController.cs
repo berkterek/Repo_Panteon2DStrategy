@@ -83,22 +83,4 @@ namespace Panteon2DStrategy.Controllers
             OnToggleValueChanged?.Invoke(_isSelected);
         }
     }
-
-    public interface ISoldierController : IEntityController,ICanSelectableController
-    {
-        Transform Target { get; set; }
-        Vector3 TargetPosition { get; set; }
-        ISoldierStats Stats { get; }
-        ISoldierAnimationService AnimationManager { get; }
-        IMovementService MovementManager { get; }
-    }
-
-    public interface ICanSelectableController
-    {
-        bool IsSelected { get; }
-        void Toggle();
-        void Unselected();
-        event System.Action<bool> OnToggleValueChanged;
-        PlayerType PlayerType { get; }
-    }
 }

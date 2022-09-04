@@ -1,5 +1,5 @@
+using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.StateMachineObjects;
-using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Managers;
 using Panteon2DStrategy.Systems;
 using UnityEngine;

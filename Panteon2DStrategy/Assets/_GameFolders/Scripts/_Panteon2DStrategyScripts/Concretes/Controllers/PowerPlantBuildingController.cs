@@ -4,20 +4,21 @@ using UnityEngine;
 
 namespace Panteon2DStrategy.Controllers
 {
-    public class TileBuildingController : BaseTileBuildingController
+    public class PowerPlantBuildingController : BaseTileBuildingController
     {
-        [SerializeField] BuildingDataContainerSO _buildingDataContainer;
+        [SerializeField] PowerPlantDataContainerSO _powerPlantDataContainer;
 
         protected override void OnValidate()
         {
             base.OnValidate();
-            _area.size = _buildingDataContainer.Area.size;
+            if (_powerPlantDataContainer == null) return;
+            _area.size = _powerPlantDataContainer.Area.size;
         }
 
         protected override void Bind()
         {
             //TODO this bind code will refactor
-            _worldCanvasController.Bind(_buildingDataContainer.Name);
+            _worldCanvasController.Bind(_powerPlantDataContainer.Name);
         }
     }
 }

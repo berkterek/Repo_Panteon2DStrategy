@@ -1,5 +1,5 @@
+using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Movements;
-using Panteon2DStrategy.Controllers;
 using Pathfinding;
 using UnityEngine;
 

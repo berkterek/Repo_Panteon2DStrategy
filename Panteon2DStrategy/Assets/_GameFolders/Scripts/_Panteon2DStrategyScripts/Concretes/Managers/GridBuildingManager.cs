@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Helpers;
 using Panteon2DStrategy.Abstracts.Inputs;
+using Panteon2DStrategy.Abstracts.ScriptableObjects;
 using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Helpers;
-using Panteon2DStrategy.ScriptableObjects;
 using Panteon2DStrategyScripts.Helpers;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -17,18 +18,15 @@ namespace Panteon2DStrategy.Managers
         [SerializeField] GridLayout _gridLayout;
         [SerializeField] Tilemap _mainTilemap;
         [SerializeField] Tilemap _tempTilemap;
-        [SerializeField] TileBuildingController _tempBuildingController;
-        [SerializeField] ProductionDataContainerSO _tempDataContainer;
+        [SerializeField] BaseTileBuildingController _tempBuildingController;
         [SerializeField] Vector3 _prePosition;
         [SerializeField] BoundsInt _preArea;
         [SerializeField] Camera _mainCamera;
-        [SerializeField] TileBuildingController[] _tileBuildingSetOnLoaded;
 
         IInputService _inputManager;
         Dictionary<TileType, TileBase> _tileBases;
         
         public GridLayout GridLayout => _gridLayout;
-        public ProductionDataContainerSO TempDataContainer => _tempDataContainer;
         
         void Awake()
         {
@@ -53,10 +51,7 @@ namespace Panteon2DStrategy.Managers
             _tileBases.Add(TileType.Red, Resources.Load<TileBase>(path+"Red"));
             _tileBases.Add(TileType.Blue, Resources.Load<TileBase>(path+"Blue"));
 
-            foreach (TileBuildingController tileBuildingController in _tileBuildingSetOnLoaded)
-            {
-                tileBuildingController.Place(this);
-            }
+            BuildingManager.Instance.SetAllBuildingInPlaceWhenGameStart(this);
         }
 
         void Update()
@@ -98,7 +93,6 @@ namespace Panteon2DStrategy.Managers
         {
             ClearArea();
             Destroy(_tempBuildingController.gameObject);
-            _tempDataContainer = null;
             _tempBuildingController = null;
         }
 
@@ -142,9 +136,8 @@ namespace Panteon2DStrategy.Managers
         {
             if(_tempBuildingController != null) DestroyTempBuilding();
 
-            _tempDataContainer = data;
             _tempBuildingController = Instantiate(data.Prefab, DirectionCacheHelper.Zero, DirectionCacheHelper.Identity)
-                .GetComponent<TileBuildingController>();
+                .GetComponent<BaseTileBuildingController>();
             FollowBuilding();
         }
 
@@ -168,7 +161,6 @@ namespace Panteon2DStrategy.Managers
             TileHelper.SetTilesBlocks(area, TileType.Empty, _tempTilemap, _tileBases);
             TileHelper.SetTilesBlocks(area, TileType.Blue, _mainTilemap, _tileBases);
             _tempBuildingController = null;
-            _tempDataContainer = null;
         }
     }    
 }

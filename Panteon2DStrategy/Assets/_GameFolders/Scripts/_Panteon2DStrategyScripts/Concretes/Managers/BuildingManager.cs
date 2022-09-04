@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Helpers;
-using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Serializables;
 using Panteon2DStrategy.Systems;
@@ -18,15 +18,26 @@ namespace Panteon2DStrategy.Managers
             SetSingleton(this);
         }
 
-        public void SetBuildingToPlayer(TileBuildingController building)
+        public void SetBuildingToPlayer(BaseTileBuildingController building)
         {
             _buildingInspectors.FirstOrDefault(x => x.PlayerType == ControlSystem.Instance.CurrentPlayerData.PlayerType).ValuesList.Add(building);
             AstarPath.active.Scan();
         }
 
-        public List<TileBuildingController> GetBuildings(PlayerType playerType)
+        public List<BaseTileBuildingController> GetBuildings(PlayerType playerType)
         {
             return _buildingInspectors.FirstOrDefault(x => x.PlayerType == playerType).ValuesList;
+        }
+
+        public void SetAllBuildingInPlaceWhenGameStart(GridBuildingManager gridManager)
+        {
+            foreach (BuildingInspector buildingInspector in _buildingInspectors)
+            {
+                foreach (var baseTileBuildingController in buildingInspector.ValuesList)
+                {
+                    baseTileBuildingController.Place(gridManager);
+                }
+            }
         }
     }    
 }

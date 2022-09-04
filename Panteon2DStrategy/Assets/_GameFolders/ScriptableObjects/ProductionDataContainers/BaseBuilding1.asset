@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867a2c5b39538ea4faaf53ff7957077e, type: 3}
-  m_Name: Soldier2ProductionDataContainer
+  m_Script: {fileID: 11500000, guid: ac350e28d7de4e31be7dcc14c7534743, type: 3}
+  m_Name: BaseBuilding1
   m_EditorClassIdentifier: 
-  _name: Soldier 2
+  _name: Base 1
   _description: 
-  _icon: {fileID: 21300000, guid: f3bb85cfb69f93d4aad3453da8ddb2bf, type: 3}
-  _prefab: {fileID: 4902753452654716440, guid: 0e7cb8696b05d7040bdc6d743d1155c8, type: 3}
+  _area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 4, y: 4, z: 1}
+  _icon: {fileID: 21300000, guid: 012d8a78617fb4a42b80e1636f455866, type: 3}
+  _prefab: {fileID: 0}

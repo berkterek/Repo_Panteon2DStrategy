@@ -1,12 +1,14 @@
 ﻿using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.ScriptableObjects;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Panteon2DStrategy.Controllers
 {
-    public class TileBuildingController : BaseTileBuildingController
+    public class SoldierBuilding : BaseTileBuildingController
     {
-        [SerializeField] BuildingDataContainerSO _buildingDataContainer;
+        [BoxGroup("Soldier Info")] [SerializeField]
+        SoldierBuildingDataContainerSO _buildingDataContainer;
 
         protected override void OnValidate()
         {

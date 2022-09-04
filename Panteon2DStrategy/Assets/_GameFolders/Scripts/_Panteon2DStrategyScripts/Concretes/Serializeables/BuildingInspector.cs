@@ -1,9 +1,9 @@
-﻿using Panteon2DStrategy.Controllers;
+﻿using Panteon2DStrategy.Abstracts.Controllers;
 
 namespace Panteon2DStrategy.Serializables
 {
     [System.Serializable]
-    public class BuildingInspector : GenericInspector<TileBuildingController>
+    public class BuildingInspector : GenericInspector<BaseTileBuildingController>
     {
         
     }

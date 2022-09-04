@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1924189503
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f3bb85cfb69f93d4aad3453da8ddb2bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1924189503
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f3bb85cfb69f93d4aad3453da8ddb2bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -233,7 +233,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1924189503
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f3bb85cfb69f93d4aad3453da8ddb2bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -301,6 +301,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier2Building
       objectReference: {fileID: 0}
+    - target: {fileID: 4122925085622096796, guid: ba21f43173682de43a2e856305389aeb, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779061850129048878, guid: ba21f43173682de43a2e856305389aeb, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7048820585654902972, guid: ba21f43173682de43a2e856305389aeb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.19
@@ -327,8 +335,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba21f43173682de43a2e856305389aeb, type: 3}
+--- !u!1 &4902753452654716440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1246194665771547372, guid: ba21f43173682de43a2e856305389aeb, type: 3}
+  m_PrefabInstance: {fileID: 6143274071279885556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6874864317215706538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 732159931740311902, guid: ba21f43173682de43a2e856305389aeb, type: 3}
   m_PrefabInstance: {fileID: 6143274071279885556}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5424530995256022623 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2163562953521334955, guid: ba21f43173682de43a2e856305389aeb, type: 3}
+  m_PrefabInstance: {fileID: 6143274071279885556}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e58f3dbbe90ec49beb213356d2052f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5823653776633264623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902753452654716440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511986a9adb14952ba6c6985e722786a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerType: 0
+  _transform: {fileID: 6874864317215706538}
+  _area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 0, y: 0, z: 0}
+  _isPlaced: 0
+  _isSelected: 0
+  _worldCanvasController: {fileID: 5424530995256022623}
+  _buildingDataContainer: {fileID: 11400000, guid: 42d13f7cd187e094eb061602e4955bb8, type: 2}

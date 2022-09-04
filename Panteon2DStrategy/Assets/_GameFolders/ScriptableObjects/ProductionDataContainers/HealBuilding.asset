@@ -9,10 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867a2c5b39538ea4faaf53ff7957077e, type: 3}
-  m_Name: HealthProductionDataContainer
+  m_Script: {fileID: 11500000, guid: 76bd765e6da345da99a398814fed3604, type: 3}
+  m_Name: HealBuilding
   m_EditorClassIdentifier: 
-  _name: Heal
+  _name: Healer
   _description: 
+  _area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 2, y: 3, z: 1}
   _icon: {fileID: 21300000, guid: cf3d95f941ff4d44cbaeb8ba64fd3838, type: 3}
   _prefab: {fileID: 5265706160457831320, guid: 5792caa334c43d4449ed7c4861f7bc3a, type: 3}
+  _value: 0.1
+  _distance: 5

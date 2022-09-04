@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867a2c5b39538ea4faaf53ff7957077e, type: 3}
-  m_Name: MainBase2ProductionDataContainer
+  m_Script: {fileID: 11500000, guid: ac350e28d7de4e31be7dcc14c7534743, type: 3}
+  m_Name: BaseBuilding2
   m_EditorClassIdentifier: 
-  _name: Main Base
-  _description: Player 2 main base
+  _name: Base 2
+  _description: 
+  _area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 4, y: 4, z: 1}
   _icon: {fileID: 21300000, guid: 335d5297a1356f64fabc68c7b658b558, type: 3}
-  _prefab: {fileID: 7239816549188563456, guid: 9ba5071262b623f44b2e97b2b42b0e62, type: 3}
+  _prefab: {fileID: 0}
