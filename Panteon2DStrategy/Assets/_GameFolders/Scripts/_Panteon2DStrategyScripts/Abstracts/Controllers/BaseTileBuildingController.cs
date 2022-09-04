@@ -1,4 +1,5 @@
-﻿using Panteon2DStrategy.Controllers;
+﻿using Panteon2DStrategy.Abstracts.Combats;
+using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Helpers;
 using Panteon2DStrategy.Managers;
@@ -9,7 +10,7 @@ using UnityEngine;
 
 namespace Panteon2DStrategy.Abstracts.Controllers
 {
-    public abstract class BaseTileBuildingController : MonoBehaviour,ICanSelectableController
+    public abstract class BaseTileBuildingController : MonoBehaviour,ICanSelectableController,IHealthController
     {
         [BoxGroup("Game Event")] [SerializeField]
         protected GameEvent _gameEvent;
@@ -25,10 +26,15 @@ namespace Panteon2DStrategy.Abstracts.Controllers
         [SerializeField] bool _isSelected;
         [BoxGroup("Base Info")]
         [SerializeField] protected WorldCanvasController _worldCanvasController;
-        
+
+        [BoxGroup("Base Info")] [SerializeField]
+        BuildingStatsSO _stats;
+
+        public IHealthService HealthManager { get; private set; }
         public PlayerType PlayerType => _playerType;
         public bool IsSelected => _isSelected;
         public bool IsPlaced => _isPlaced;
+        public BuildingStatsSO Stats => _stats;
 
         public Transform Transform => _transform;
         public BoundsInt Area => _area;

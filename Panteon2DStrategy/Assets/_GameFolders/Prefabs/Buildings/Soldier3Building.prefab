@@ -684,6 +684,7 @@ MonoBehaviour:
   _isPlaced: 0
   _isSelected: 0
   _worldCanvasController: {fileID: 7338883802958513754}
+  _stats: {fileID: 11400000, guid: 0bb9114ae5f477444b98510cc0b3602d, type: 2}
   _buildingDataContainer: {fileID: 11400000, guid: 85202f6ce03c7684bb3482919a2158c0, type: 2}
   _firstTarget: {fileID: 8147947950372082537}
   _createButton: {fileID: 2350139022351293362}
