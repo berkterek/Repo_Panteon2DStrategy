@@ -27,7 +27,7 @@ namespace Panteon2DStrategy.Managers.Movements
         {
             if (!_soldierController.IsSelected) return;
 
-            _aiPath.isStopped = _aiPath.remainingDistance < 0.3f;
+            _aiPath.isStopped = _aiPath.remainingDistance < 0.5f;
 
             if (_lastPosition == _soldierController.TargetPosition) return;
             _lastPosition = _soldierController.TargetPosition;

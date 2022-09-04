@@ -5,6 +5,7 @@ using Panteon2DStrategy.Animations;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Managers;
 using Panteon2DStrategy.Managers.Movements;
+using Panteon2DStrategy.ScriptableObjects;
 using Panteon2DStrategyScripts.Helpers;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace Panteon2DStrategy.Controllers
 {
     public class SoldierController : MonoBehaviour,ISoldierController
     {
+        [SerializeField] SoldierStats _soldierStats;
         [SerializeField] PlayerType _playerType;
         [SerializeField] Transform _transform;
         [SerializeField] Transform _destinationTarget;
@@ -20,6 +22,7 @@ namespace Panteon2DStrategy.Controllers
         public Transform Transform => _transform;
         public Transform Target { get; set; }
         public bool IsSelected => _isSelected;
+        public ISoldierStats Stats => _soldierStats;
         public ISoldierAnimationService AnimationManager { get; private set; }
         public IMovementService MovementManager { get; private set; }
         public Vector3 TargetPosition { get; set; }
@@ -72,6 +75,7 @@ namespace Panteon2DStrategy.Controllers
     {
         Transform Target { get; set; }
         Vector3 TargetPosition { get; set; }
+        ISoldierStats Stats { get; }
         ISoldierAnimationService AnimationManager { get; }
         IMovementService MovementManager { get; }
     }
