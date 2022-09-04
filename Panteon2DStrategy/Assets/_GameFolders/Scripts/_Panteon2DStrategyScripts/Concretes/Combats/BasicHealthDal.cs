@@ -2,7 +2,7 @@
 
 namespace Panteon2DStrategy.Combats
 {
-    public class HealthDal : IHealthDal 
+    public class BasicHealthDal : IHealthDal 
     {
         public int CurrentHealth { get; private set; }
         public bool IsDead => CurrentHealth <= 0;

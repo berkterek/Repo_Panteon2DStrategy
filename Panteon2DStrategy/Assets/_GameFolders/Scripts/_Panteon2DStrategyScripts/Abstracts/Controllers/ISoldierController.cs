@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Panteon2DStrategy.Abstracts.Controllers
 {
-    public interface ISoldierController : IEntityController,ICanSelectableController,IHealthController
+    public interface ISoldierController : IEntityController,ICanSelectableController,IHealthController,IAttackerController
     {
         Transform Target { get; set; }
         Vector3 TargetPosition { get; set; }

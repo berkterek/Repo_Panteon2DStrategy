@@ -2,7 +2,7 @@ using NUnit.Framework;
 using NSubstitute;
 using Panteon2DStrategy.Abstracts.Combats;
 using Panteon2DStrategy.Abstracts.Controllers;
-using Panteon2DStrategy.Managers;
+using Panteon2DStrategy.Managers.Combats;
 using Panteon2DStrategy.ScriptableObjects;
 
 namespace Combats

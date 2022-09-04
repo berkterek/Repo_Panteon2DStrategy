@@ -41,16 +41,16 @@ namespace Panteon2DStrategy.Managers.Movements
                 return;
             }
 
-            // Vector3 mousePosition = _playerController.InputManager.MousePosition;
-            //
-            // if (mousePosition.y >= Screen.height * 0.95f || mousePosition.y <= Screen.height * 0.05f ||
-            //     mousePosition.x >= Screen.width * 0.95f || mousePosition.x <= Screen.width * 0.05f)
-            // {
-            //     Vector2 worldPosition = _playerController.MainCamera.ScreenToWorldPoint(mousePosition);
-            //
-            //     _currentDal = _moveDalDictionary[MoveType.MousePosition];
-            //     _currentDal.Tick(worldPosition);    
-            // }
+            Vector3 mousePosition = _playerController.InputManager.MousePosition;
+            
+            if (mousePosition.y >= Screen.height * 0.95f || mousePosition.y <= Screen.height * 0.05f ||
+                mousePosition.x >= Screen.width * 0.95f || mousePosition.x <= Screen.width * 0.05f)
+            {
+                Vector2 worldPosition = _playerController.MainCamera.ScreenToWorldPoint(mousePosition);
+            
+                _currentDal = _moveDalDictionary[MoveType.MousePosition];
+                _currentDal.Tick(worldPosition);    
+            }
         }
 
         public void FixedTick()

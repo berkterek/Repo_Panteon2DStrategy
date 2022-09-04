@@ -1,7 +1,7 @@
 ﻿using Panteon2DStrategy.Abstracts.Combats;
 using Panteon2DStrategy.Abstracts.Controllers;
 
-namespace Panteon2DStrategy.Managers
+namespace Panteon2DStrategy.Managers.Combats
 {
     public class SoldierHealthManager : IHealthService
     {

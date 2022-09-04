@@ -7,6 +7,7 @@ using Panteon2DStrategy.Animations;
 using Panteon2DStrategy.Combats;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Managers;
+using Panteon2DStrategy.Managers.Combats;
 using Panteon2DStrategy.Managers.Movements;
 using Panteon2DStrategy.ScriptableObjects;
 using Panteon2DStrategy.ViewModels;
@@ -34,6 +35,7 @@ namespace Panteon2DStrategy.Controllers
         public Vector3 TargetPosition { get; set; }
         public PlayerType PlayerType => _playerType;
         public IHealthService HealthManager { get; private set; }
+        public IAttackerService AttackerManager { get; private set; }
 
         public event System.Action<bool> OnToggleValueChanged;
 
@@ -42,7 +44,8 @@ namespace Panteon2DStrategy.Controllers
             this.GetReference(ref _transform);
             AnimationManager = new SoldierAnimationAiPathManager(this, new SoldierAnimatorDal(this));
             MovementManager = new SoldierMovementAiPathManager(this, new MoveWithDirectPositionDal(_destinationTarget));
-            HealthManager = new SoldierHealthManager(this, new HealthDal());
+            HealthManager = new SoldierHealthManager(this, new BasicHealthDal());
+            AttackerManager = new SoldierAttackerManager(this, new RandomBasicAttackerDal());
         }
 
         void OnValidate()
