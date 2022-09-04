@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 732159931740311902}
   - component: {fileID: 4393491606033858376}
   - component: {fileID: 4386564373774880871}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: BaseBuilding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 922252134988579937}
   - component: {fileID: 2331425778977505685}
   - component: {fileID: 3421787869671574642}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 3896667861032409643}
   - component: {fileID: 5836740187994435248}
   - component: {fileID: 2163562953521334955}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: WorldCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 1672361706627566492}
   - component: {fileID: 6353104370038918978}
   - component: {fileID: 1283248226421749432}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: CurrentHealthImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7048820585654902972}
   - component: {fileID: 8173730019334055188}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8620911205484997827}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: TextObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 7544650924826591660}
   - component: {fileID: 5761738018033354173}
   - component: {fileID: 4222462940102804658}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: HealthBackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3217612691824715759}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: HealthObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}

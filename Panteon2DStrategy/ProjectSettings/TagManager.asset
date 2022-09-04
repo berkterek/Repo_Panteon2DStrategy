@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Selectable
-  - 
+  - DynamicSelectable
+  - StaticSelectable
   - 
   - 
   - 
@@ -44,11 +44,11 @@ TagManager:
   - name: Background
     uniqueID: 770878945
     locked: 0
-  - name: Soldier
-    uniqueID: 1277191207
-    locked: 0
   - name: Building
     uniqueID: 2370777793
+    locked: 0
+  - name: Soldier
+    uniqueID: 1277191207
     locked: 0
   - name: Ui
     uniqueID: 3228013681
