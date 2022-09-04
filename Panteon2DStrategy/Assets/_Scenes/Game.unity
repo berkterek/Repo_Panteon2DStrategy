@@ -34765,6 +34765,10 @@ PrefabInstance:
       propertyPath: _playerType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5390339061318599304, guid: 9ba5071262b623f44b2e97b2b42b0e62, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7239816549188563456, guid: 9ba5071262b623f44b2e97b2b42b0e62, type: 3}
       propertyPath: m_Name
       value: Player2MainBaseBuilding

@@ -106,5 +106,10 @@ namespace Panteon2DStrategy.Abstracts.Controllers
         protected abstract void SetSize();
 
         protected abstract void Bind();
+
+        public void SetPlayer(PlayerType playerType)
+        {
+            _playerType = playerType;
+        }
     }
 }
