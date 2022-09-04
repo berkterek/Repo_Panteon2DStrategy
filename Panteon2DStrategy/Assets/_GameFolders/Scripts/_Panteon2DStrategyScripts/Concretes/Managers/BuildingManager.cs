@@ -19,6 +19,7 @@ namespace Panteon2DStrategy.Managers
         public void SetBuildingToPlayer(TileBuildingController building)
         {
             _buildingInspectors.FirstOrDefault(x => x.PlayerType == ControlSystem.Instance.CurrentPlayerData.PlayerType).ValuesList.Add(building);
+            AstarPath.active.Scan();
         }
     }    
 }
