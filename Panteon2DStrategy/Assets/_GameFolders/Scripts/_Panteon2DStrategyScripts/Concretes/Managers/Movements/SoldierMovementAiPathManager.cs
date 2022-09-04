@@ -10,6 +10,7 @@ namespace Panteon2DStrategy.Managers.Movements
         readonly IMoverDal _moverDal;
         readonly ISoldierController _soldierController;
         readonly AIPath _aiPath;
+        readonly float _stopDistance = 0f;
         
         Vector3 _lastPosition;
         bool _isSetOneTime = false;
@@ -21,13 +22,15 @@ namespace Panteon2DStrategy.Managers.Movements
             _moverDal = moverDal;
             _soldierController = soldierController;
             _aiPath = soldierController.Transform.GetComponent<AIPath>();
+            _aiPath.speed = soldierController.Stats.MoveSpeed;
+            _stopDistance = soldierController.Stats.StopDistance;
         }
         
         public void Tick()
         {
             if (!_soldierController.IsSelected) return;
 
-            _aiPath.isStopped = _aiPath.remainingDistance < 0.5f;
+            _aiPath.isStopped = _aiPath.remainingDistance < _stopDistance;
 
             if (_lastPosition == _soldierController.TargetPosition) return;
             _lastPosition = _soldierController.TargetPosition;

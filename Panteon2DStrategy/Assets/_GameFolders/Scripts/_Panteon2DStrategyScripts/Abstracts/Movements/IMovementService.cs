@@ -1,4 +1,5 @@
-﻿namespace Panteon2DStrategy.Abstracts.Movements
+﻿
+namespace Panteon2DStrategy.Abstracts.Movements
 {
     public interface IMovementService
     {

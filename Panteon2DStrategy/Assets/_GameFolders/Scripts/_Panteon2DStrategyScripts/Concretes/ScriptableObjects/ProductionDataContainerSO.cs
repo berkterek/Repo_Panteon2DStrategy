@@ -26,4 +26,3 @@ namespace Panteon2DStrategy.ScriptableObjects
         public GameObject Prefab => _prefab;
     }    
 }
-
