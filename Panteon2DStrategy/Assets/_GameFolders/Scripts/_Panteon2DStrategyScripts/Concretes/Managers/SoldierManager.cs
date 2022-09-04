@@ -4,6 +4,7 @@ using Panteon2DStrategy.Abstracts.Helpers;
 using Panteon2DStrategy.Controllers;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Serializables;
+using Panteon2DStrategy.Systems;
 using UnityEngine;
 
 namespace Panteon2DStrategy.Managers
@@ -11,8 +12,6 @@ namespace Panteon2DStrategy.Managers
     public class SoldierManager : SingletonDestroyObject<SoldierManager>
     {
         [SerializeField] SoldierInspector[] _soldiers;
-
-        public SoldierInspector[] AllSoldiers => _soldiers;
 
         public List<SoldierController> GetSoldiers(PlayerType playerType)
         {
@@ -22,6 +21,12 @@ namespace Panteon2DStrategy.Managers
         void Awake()
         {
             SetSingleton(this);
+        }
+        
+        public void SetSoldierToPlayer(SoldierController soldier)
+        {
+            _soldiers.FirstOrDefault(x => x.PlayerType == ControlSystem.Instance.CurrentPlayerData.PlayerType).ValuesList.Add(soldier);
+            AstarPath.active.Scan();
         }
     }
 }

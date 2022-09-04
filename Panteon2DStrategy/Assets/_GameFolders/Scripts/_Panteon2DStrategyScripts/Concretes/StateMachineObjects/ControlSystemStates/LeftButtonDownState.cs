@@ -51,6 +51,13 @@ namespace Panteon2DStrategy.StateMachineObjects.ControlSystemStates
 
                         soldier.Unselected();
                     }
+
+                    var buildings = BuildingManager.Instance.GetBuildings(_controlSystem.CurrentPlayerData.PlayerType);
+                    foreach (var building in buildings)
+                    {
+                        if (!building.IsSelected) continue;
+                        building.Unselected();
+                    }
                 }
 
                 _isButtonDown = false;

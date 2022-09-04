@@ -1,3 +1,4 @@
+using System.Collections;
 using Panteon2DStrategy.Abstracts.Animations;
 using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Movements;
@@ -40,6 +41,18 @@ namespace Panteon2DStrategy.Controllers
         void OnValidate()
         {
             this.GetReference(ref _transform);
+        }
+
+        IEnumerator Start()
+        {
+            if(_playerType != PlayerType.NotSelected) yield break;
+
+            while (SoldierManager.Instance == null)
+            {
+                yield return null;
+            }
+            
+            SoldierManager.Instance.SetSoldierToPlayer(this);
         }
 
         void Update()
