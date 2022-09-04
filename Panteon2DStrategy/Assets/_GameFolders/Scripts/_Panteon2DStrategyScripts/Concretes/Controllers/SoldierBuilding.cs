@@ -1,6 +1,8 @@
-﻿using Panteon2DStrategy.Abstracts.Controllers;
+﻿using Panteon2DStrategy.Abstracts.Combats;
+using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Helpers;
 using Panteon2DStrategy.Managers;
+using Panteon2DStrategy.Managers.Combats;
 using Panteon2DStrategy.ScriptableObjects;
 using Panteon2DStrategy.ViewModels;
 using Panteon2DStrategyScripts.Helpers;
@@ -20,6 +22,8 @@ namespace Panteon2DStrategy.Controllers
 
         [BoxGroup("Soldier Info")] [SerializeField]
         Button _createButton;
+        
+        public IHealthService HealthManager { get; private set; }
 
         protected override void Awake()
         {

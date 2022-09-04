@@ -1,5 +1,6 @@
 using Panteon2DStrategy.Abstracts.Animations;
 using Panteon2DStrategy.Abstracts.Controllers;
+using Panteon2DStrategy.Helpers;
 using Pathfinding;
 using UnityEngine;
 
@@ -25,7 +26,11 @@ namespace Panteon2DStrategy.Managers
 
         public void LateTick()
         {
-            _animationDal.DirectionSetterAnimation(_velocity);
+            if (_velocity != DirectionCacheHelper.Vector3Zero)
+            {
+                _animationDal.DirectionSetterAnimation(_velocity);    
+            }
+            
             _animationDal.IsMovingAnimation(_velocity.magnitude > 0f);
         }
 
@@ -36,6 +41,8 @@ namespace Panteon2DStrategy.Managers
 
         public void IsAttacking(bool value)
         {
+            if (value == _animationDal.IsAttacking) return;
+            
             _animationDal.IsAttackingAnimation(value);
         }
     }

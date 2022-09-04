@@ -17,3 +17,5 @@ MonoBehaviour:
   _maxHealth: 10
   _minDamage: 2
   _maxDamage: 10
+  _minAttackRate: 2
+  _maxAttackRate: 6

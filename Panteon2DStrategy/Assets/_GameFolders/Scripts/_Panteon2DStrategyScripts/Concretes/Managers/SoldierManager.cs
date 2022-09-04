@@ -29,5 +29,12 @@ namespace Panteon2DStrategy.Managers
             _soldiers.FirstOrDefault(x => x.PlayerType == ControlSystem.Instance.CurrentPlayerData.PlayerType).ValuesList.Add(soldier as SoldierController);
             AstarPath.active.Scan();
         }
+
+        public void RemoveThisSoldier(SoldierController soldierController)
+        {
+            _soldiers.FirstOrDefault(x => x.PlayerType == soldierController.PlayerType).ValuesList
+                .Remove(soldierController);
+            Destroy(soldierController.Parent);
+        }
     }
 }

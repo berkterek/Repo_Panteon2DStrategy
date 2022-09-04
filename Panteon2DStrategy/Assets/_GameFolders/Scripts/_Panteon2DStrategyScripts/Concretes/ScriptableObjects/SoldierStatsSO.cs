@@ -23,8 +23,43 @@ namespace Panteon2DStrategy.ScriptableObjects
         [Range(1,10)]
         [BoxGroup("Damage Infos")]
         [SerializeField] int _maxDamage;
+        [BoxGroup("Damage Infos")]
+        [Range(1,10)]
+        [SerializeField] int _minAttackRate;
+        [Range(1,10)]
+        [BoxGroup("Damage Infos")]
+        [SerializeField] int _maxAttackRate;
+        
+        public float MoveSpeed => _moveSpeed;
+        public float StopDistance => _stopDistance;
+        public int MaxHealth => _maxHealth;
+        public int MinDamage => _minDamage;
+        public int MaxDamage => _maxDamage;
+        public int MinAttackRate => _minAttackRate;
+        public int MaxAttackRate => _maxAttackRate;
         
         void OnValidate()
+        {
+            SetDamage();
+            
+            SetAttackRage();
+        }
+
+        private void SetAttackRage()
+        {
+            if (_minAttackRate > _maxAttackRate)
+            {
+                _maxAttackRate = _minAttackRate;
+                _minAttackRate--;
+            }
+            else if (_maxAttackRate < _minAttackRate)
+            {
+                _minAttackRate = _maxAttackRate;
+                _maxAttackRate++;
+            }
+        }
+
+        private void SetDamage()
         {
             if (_minDamage > _maxDamage)
             {
@@ -37,12 +72,6 @@ namespace Panteon2DStrategy.ScriptableObjects
                 _maxDamage++;
             }
         }
-
-        public float MoveSpeed => _moveSpeed;
-        public float StopDistance => _stopDistance;
-        public int MaxHealth => _maxHealth;
-        public int MinDamage => _minDamage;
-        public int MaxDamage => _maxDamage;
     }
 
     public interface ISoldierStats
@@ -52,5 +81,7 @@ namespace Panteon2DStrategy.ScriptableObjects
         public int MaxHealth { get; }
         public int MinDamage { get; }
         public int MaxDamage { get; }
+        public int MinAttackRate { get; }
+        public int MaxAttackRate { get; }
     }
 }
