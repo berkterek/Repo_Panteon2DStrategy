@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Panteon2DStrategy.Abstracts.Animations;
 using Panteon2DStrategy.Abstracts.Combats;

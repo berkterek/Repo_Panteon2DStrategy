@@ -29,8 +29,8 @@ namespace Panteon2DStrategy.StateMachineObjects.ControlSystemStates
                 var mousePosition = _controlSystem.CurrentPlayerData.PlayerController.InputManager.MousePosition;
                 var worldPosition = _controlSystem.CurrentPlayerData.PlayerController.MainCamera.ScreenToWorldPoint(mousePosition);
 
-                var raycastHit = Physics2D.Raycast(_controlSystem.CurrentPlayerData.PlayerController.MainCamera.transform.position,
-                    worldPosition, Mathf.Infinity, _controlSystem.LayerMask);
+                var firstPosition = new Vector3(worldPosition.x, worldPosition.y, -10f);
+                var raycastHit = Physics2D.Raycast(firstPosition,worldPosition, Mathf.Infinity, _controlSystem.LayerMask);
 
                 if (raycastHit.collider != null)
                 {
