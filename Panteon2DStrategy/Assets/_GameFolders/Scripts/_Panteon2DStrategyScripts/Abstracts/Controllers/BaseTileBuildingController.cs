@@ -87,6 +87,11 @@ namespace Panteon2DStrategy.Abstracts.Controllers
         {
             _isSelected = !_isSelected;
             OnToggleValueChanged?.Invoke(_isSelected);
+
+            if (_isSelected)
+            {
+                
+            }
         }
 
         public void Unselected()

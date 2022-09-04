@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3a45db3d8c42e191e73cd973ecf305, type: 3}
   m_Name: Soldier3Building
   m_EditorClassIdentifier: 
-  _name: Soldier 3
+  _name: Soldier 3 B
   _description: 
+  _infoType: 0
+  _icon: {fileID: 21300000, guid: 6ed4a56ae335dae4482ef95ce03dd844, type: 3}
+  _prefab: {fileID: 7680090466467771933, guid: 2989655487542c646b3dd0c12cab0b1d, type: 3}
   _area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 4, y: 4, z: 1}
-  _icon: {fileID: 21300000, guid: 6ed4a56ae335dae4482ef95ce03dd844, type: 3}
-  _prefab: {fileID: 7680090466467771933, guid: 2989655487542c646b3dd0c12cab0b1d, type: 3}
-  _soldierObjectPrefab: {fileID: 2775875328824617946, guid: 06e58bf4afee3d841a95fb67ecd4ca36, type: 3}
+  _soldierDataContainer: {fileID: 11400000, guid: b799ce9e7c944df428891077c6f4eb1b, type: 2}

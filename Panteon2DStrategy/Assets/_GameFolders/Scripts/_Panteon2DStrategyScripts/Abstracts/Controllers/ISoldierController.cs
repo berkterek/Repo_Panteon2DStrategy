@@ -1,5 +1,4 @@
 ﻿using Panteon2DStrategy.Abstracts.Animations;
-using Panteon2DStrategy.Abstracts.Controllers;
 using Panteon2DStrategy.Abstracts.Movements;
 using Panteon2DStrategy.ScriptableObjects;
 using UnityEngine;

@@ -14,7 +14,7 @@ namespace Panteon2DStrategy.Controllers
 {
     public class SoldierController : MonoBehaviour,ISoldierController
     {
-        [SerializeField] SoldierStats _soldierStats;
+        [SerializeField] SoldierStatsSO _soldierStats;
         [SerializeField] PlayerType _playerType;
         [SerializeField] Transform _transform;
         [SerializeField] Transform _destinationTarget;

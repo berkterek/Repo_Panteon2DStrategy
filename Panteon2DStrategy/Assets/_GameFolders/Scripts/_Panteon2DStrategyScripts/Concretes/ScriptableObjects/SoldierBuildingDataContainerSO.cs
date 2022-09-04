@@ -1,5 +1,4 @@
 ﻿using Panteon2DStrategy.Abstracts.ScriptableObjects;
-using Panteon2DStrategy.Controllers;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -9,8 +8,8 @@ namespace Panteon2DStrategy.ScriptableObjects
     public class SoldierBuildingDataContainerSO : ProductionDataContainerSO
     {
         [BoxGroup("Soldier Object Info")] [SerializeField]
-        GameObject _soldierObjectPrefab;
+        SoldierDataContainerSO _soldierDataContainer;
 
-        public GameObject SoldierObjectPrefab => _soldierObjectPrefab;
+        public SoldierDataContainerSO SoldierObjectPrefab => _soldierDataContainer;
     }
 }

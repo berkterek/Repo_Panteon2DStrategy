@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Panteon2DStrategy.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "Soldier Stats", menuName = "Panteon/Stats/Soldier Stats")]
-    public class SoldierStats : ScriptableObject,ISoldierStats
+    public class SoldierStatsSO : ScriptableObject,ISoldierStats
     {
         [BoxGroup("Movement Infos")]
         [Range(1,1000)]
@@ -23,7 +23,7 @@ namespace Panteon2DStrategy.ScriptableObjects
         [Range(1,10)]
         [BoxGroup("Damage Infos")]
         [SerializeField] int _maxDamage;
-
+        
         void OnValidate()
         {
             if (_minDamage > _maxDamage)
