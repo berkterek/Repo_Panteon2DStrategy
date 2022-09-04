@@ -748,7 +748,8 @@ PrefabInstance:
       propertyPath: _playerType
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7d48596cc0fa2694fb8300e3e4ca25c7, type: 3}
 --- !u!1 &1123090779
 GameObject:
@@ -35055,7 +35056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   _currentPlayerType: 1
 --- !u!4 &1752667147
 Transform:
