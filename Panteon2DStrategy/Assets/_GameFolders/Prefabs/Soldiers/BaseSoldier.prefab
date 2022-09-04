@@ -309,6 +309,8 @@ MonoBehaviour:
   _transform: {fileID: 2315190955963100980}
   _destinationTarget: {fileID: 0}
   _isSelected: 0
+  _collider2D: {fileID: 1524716458131152507}
+  _parent: {fileID: 0}
 --- !u!58 &1524716458131152507
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -324,7 +326,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.011754304, y: 0.007836163}
   serializedVersion: 2
-  m_Radius: 0.40204802
+  m_Radius: 0.61
 --- !u!50 &4604783480076676949
 Rigidbody2D:
   serializedVersion: 4
