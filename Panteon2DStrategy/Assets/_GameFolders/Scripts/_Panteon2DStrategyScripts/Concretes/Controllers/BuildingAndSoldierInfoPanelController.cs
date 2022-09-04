@@ -21,5 +21,11 @@ namespace Panteon2DStrategy.Controllers
             this.GetReference(ref _image);
             this.GetReference(ref _text);
         }
+
+        public void Bind(Sprite sprite, string name)
+        {
+            _image.sprite = sprite;
+            _text.SetText(name);
+        }
     }
 }
