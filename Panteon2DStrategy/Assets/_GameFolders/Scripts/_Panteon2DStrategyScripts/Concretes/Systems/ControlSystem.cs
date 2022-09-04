@@ -1,3 +1,4 @@
+using Panteon2DStrategy.Abstracts.Helpers;
 using Panteon2DStrategy.Abstracts.StateMachineObjects;
 using Panteon2DStrategy.Enums;
 using Panteon2DStrategy.Managers;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace Panteon2DStrategy.Systems
 {
-    public class ControlSystem : MonoBehaviour, IControlSystem
+    public class ControlSystem : SingletonDestroyObject<ControlSystem>, IControlSystem
     {
         [SerializeField] LayerMask _layerMask;
         [SerializeField] PlayerType _currentPlayerType = PlayerType.PlayerA;
@@ -18,6 +19,11 @@ namespace Panteon2DStrategy.Systems
         public PlayerManagerInspector CurrentPlayerData { get; private set; }
         public LayerMask LayerMask => _layerMask;
         int _toggleIndex = 1;
+
+        void Awake()
+        {
+            SetSingleton(this);
+        }
 
         void Start()
         {

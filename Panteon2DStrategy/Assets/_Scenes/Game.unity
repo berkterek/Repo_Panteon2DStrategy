@@ -280,6 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 381226390}
+  - component: {fileID: 381226391}
   m_Layer: 0
   m_Name: '[BuildingManager]'
   m_TagString: Untagged
@@ -301,6 +302,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &381226391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381226389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6559edfaebf1bfb4192b876f29466209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buildingInspectors:
+  - _playerType: 1
+    _valuesList: []
+  - _playerType: 2
+    _valuesList: []
 --- !u!1001 &423461371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,6 +326,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5317467959900420004, guid: 40cbf2ef28108aa4ba17090d094f4a0d, type: 3}
+      propertyPath: _playerType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7239816549188563456, guid: 40cbf2ef28108aa4ba17090d094f4a0d, type: 3}
       propertyPath: m_Name
       value: Player1MainBaseBuilding
@@ -34693,6 +34715,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5317467959900420004, guid: 9ba5071262b623f44b2e97b2b42b0e62, type: 3}
+      propertyPath: _playerType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7239816549188563456, guid: 9ba5071262b623f44b2e97b2b42b0e62, type: 3}
       propertyPath: m_Name
       value: Player2MainBaseBuilding
@@ -34912,12 +34938,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soldiers:
   - _playerType: 1
-    _soldierControllers:
-    - {fileID: 0}
-    - {fileID: 0}
+    _valuesList: []
   - _playerType: 2
-    _soldierControllers:
-    - {fileID: 0}
+    _valuesList: []
 --- !u!4 &2050346455
 Transform:
   m_ObjectHideFlags: 0

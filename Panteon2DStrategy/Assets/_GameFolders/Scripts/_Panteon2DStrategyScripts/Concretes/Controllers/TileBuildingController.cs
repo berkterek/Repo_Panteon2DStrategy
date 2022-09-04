@@ -1,18 +1,23 @@
-﻿using Panteon2DStrategy.Managers;
+﻿using Panteon2DStrategy.Enums;
+using Panteon2DStrategy.Managers;
 using Panteon2DStrategy.ScriptableObjects;
 using Panteon2DStrategyScripts.Helpers;
 using UnityEngine;
 
 namespace Panteon2DStrategy.Controllers
 {
-    public class TileBuildingController : MonoBehaviour
+    public class TileBuildingController : MonoBehaviour,ICanSelectableController
     {
+        [SerializeField] PlayerType _playerType = PlayerType.NotSelected;
         [SerializeField] Transform _transform;
         [SerializeField] BoundsInt _area;
         [SerializeField] bool _isPlaced = false;
+        [SerializeField] bool _isSelected;
         [SerializeField] WorldCanvasController _worldCanvasController;
         [SerializeField] ProductionDataContainerSO _productionDataContainer;
-
+        
+        public PlayerType PlayerType => _playerType;
+        public bool IsSelected => _isSelected;
         public bool IsPlaced => _isPlaced;
         public BoundsInt Area
         {
@@ -21,6 +26,8 @@ namespace Panteon2DStrategy.Controllers
         }
 
         public Transform Transform => _transform;
+        
+        public event System.Action<bool> OnToggleValueChanged;
 
         void Awake()
         {
@@ -52,8 +59,10 @@ namespace Panteon2DStrategy.Controllers
             _worldCanvasController.Bind(_productionDataContainer.Name);
             
             gridManager.TakeArea(area);
+
+            if (_playerType != PlayerType.NotSelected) return;
             
-            //TODO set which player own this building
+            BuildingManager.Instance.SetBuildingToPlayer(this);
         }
 
         private BoundsInt GetArea(GridBuildingManager gridManager)
@@ -68,6 +77,18 @@ namespace Panteon2DStrategy.Controllers
         public void SetAreaPosition(Vector3Int worldToCell)
         {
             _area.position = worldToCell;
+        }
+        
+        public void Toggle()
+        {
+            _isSelected = !_isSelected;
+            OnToggleValueChanged?.Invoke(_isSelected);
+        }
+
+        public void Unselected()
+        {
+            _isSelected = false;
+            OnToggleValueChanged?.Invoke(_isSelected);
         }
     }
 }
