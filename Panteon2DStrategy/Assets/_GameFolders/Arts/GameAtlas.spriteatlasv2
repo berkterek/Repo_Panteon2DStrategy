@@ -64,6 +64,18 @@ SpriteAtlasAsset:
     - {fileID: 2800000, guid: 5877fcf259ecf1747931bd3384b3be8f, type: 3}
     - {fileID: 2800000, guid: b8fe14d6574787848a144c9e06725101, type: 3}
     - {fileID: 2800000, guid: e1b90c14b4520e54d8a79a7b4f8bdcf2, type: 3}
+    - {fileID: 2800000, guid: a47a52853dcd4654898f06967ecd7f4e, type: 3}
+    - {fileID: 2800000, guid: 19489d59dc4c6454280c0992838ea754, type: 3}
+    - {fileID: 2800000, guid: dda7056e500fd0644ae4e6b13cd1ae8e, type: 3}
+    - {fileID: 2800000, guid: 61eebe7fc64f4ac4c9973d770694fea4, type: 3}
+    - {fileID: 2800000, guid: ddf0117b3491c9b43b53ea7545578db4, type: 3}
+    - {fileID: 2800000, guid: 8617304fed7b84040a9e6504fd2346d6, type: 3}
+    - {fileID: 2800000, guid: f1d7b2209033bd14f81fcba76cd997e6, type: 3}
+    - {fileID: 2800000, guid: 013dc7653b9ff7748a371e05d0568673, type: 3}
+    - {fileID: 2800000, guid: 67b30a00e4d098a4f9ea9cb408d0fbf9, type: 3}
+    - {fileID: 2800000, guid: 279f477379cafb34baebf0f8558983b8, type: 3}
+    - {fileID: 2800000, guid: c6475c3b71c4c734f86a4a1ee7842797, type: 3}
+    - {fileID: 2800000, guid: 794a2d431e8b6fd4eb254f31efafcdc8, type: 3}
     bindAsDefault: 1
     isAtlasV2: 1
     cachedData: {fileID: 0}
